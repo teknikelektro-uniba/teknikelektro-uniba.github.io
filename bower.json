@@ -1,0 +1,33 @@
+{
+  "name": "website questionnaire",
+  "homepage": "https://teknikelektro.unibabwi.ac.id",
+  "authors": [
+    "Muhammad Arifin Ardi"
+  ],
+  "description": "this website questionnaire for college student\
+   of electrical engineering Universitas PGRI Banyuwangi - Indonesia",
+  "main": "index.html",
+  "keywords": [
+    "college",
+    "student",
+    "electrical",
+    "engineering",
+    "universitas",
+    "PGRI",
+    "Banyuwangi"
+  ],
+  "license": "MIT License",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "font-awesome": "fontawesome#4",
+    "jquery": "^3.5.1",
+    "popper": "^2.5.3",
+    "firebase": "^7.24.0"
+  }
+}
