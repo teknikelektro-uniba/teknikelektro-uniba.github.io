@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#343a40">
+  <meta name="msapplication-navbutton-color" content="#343a40">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#343a40">
+  <meta name="programmer" content="https://github.com/ardirjs">
+  <meta name="description" content="https://github.com/ardirjs">
+  <meta name="keywords" content="https://github.com/ardirjs">
+  <meta name="author" content="https://github.com/ardirjs">
+  <meta name="title" content="https://github.com/ardirjs">
+  <meta name="copyright" content="https://github.com/ardirjs">
+  <meta Http-Equiv="Expires" content="0">
+  <meta Http-Equiv="Pragma" content="No-Cache">
+  <meta Http-Equiv="Content-type" content="Text/Html">
+  <meta Http-Equiv="Cache-Control" content="No-Cache">
+  <meta Http-Equiv="Cache-Control" content="No-Store">
+  <meta Http-Equiv="Content-Language" content="En-Us">
+  <meta Http-Equiv="X-UA-Compatible" content="IE=Edge">
+  <link href="../asset/icon/uniba.png" rel="shortcut icon">
+  <link href="../asset/icon/uniba.png" rel="apple-touch-icon">
+  <link href="../asset/icon/uniba.png" rel="apple-touch-icon-precomposed">
+  <title>Angket Kepuasan Pengguna Lulusan Program Studi Teknik Elektro</title>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../asset/style/custom-bootstrap.css">
+</head>
+<body class="bg-light">
+
+  <!--[ ############################# header ############################## ]-->
+
+  <div class="jumbotron py-5 mb-0 bg-dark rounded-0 border-bottom border-light">
+    <div class="container">
+      <a class="text-light font-weight-bolder nav-link px-0" href="https://teknikelektro.unibabwi.ac.id/">
+        <div class="row align-items-center">
+          <div class="pr-2 col-auto mb-2">
+            <img src="../asset/icon/uniba.png" alt="uniba">
+          </div>
+          <div class="col-auto py-2 mb-2">
+            <span class="text-light font-weight-bolder h3"><u>TEKNIK ELEKTRO</u></span><br>
+            <span class="text-light font-weight-bolder h5">Fakultas Teknik - Universitas PGRI Banyuwangi</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="bg-dark mb-4 shadow">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <div class="py-3 auto">
+          <h4 class="font-weight-bolder text-light text-center">Kuesioner Umpan Balik Mitra Kerjasama</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--[ ############################# end header ########################## ]-->
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Petunjuk</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-danger">
+      <div class="card-body">
+        <p class="text-justify">
+          Berikan respon anda untuk setiap indikator yang ada pada kolom sebelah kiri dengan cara memberi tanda silang ( X ) pada salah satu angka yang tersedia pada kolom alternatif jawaban.<br>Angka 1‐ 5 pada kolom alternatif jawaban menggambarkan tingkat kesesuaian setiap situasi/keadaan dengan harapan anda. Semakin tinggi angka yang anda pilih (angka 5) artinya kondisi/situasi pada pernyataan betul‐ betul sesuai dengan harapan anda sedangkan semakin kecil angka yang anda pilih (angka 1), maka kondisi/situasi pada pernyataan sangat tidak sesuai dengan harapan anda.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Biodata Responden</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Nama Instansi</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA1">
+        <label class="text-justify my-0">Alamat Instansi</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA2">
+        <label class="text-justify my-0">Nama Lengkap Responden Dan Gelar</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA3">
+        <label class="text-justify my-0">Email</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA4">
+        <label class="text-justify my-0">Nomor Telepon</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA5">
+        <label class="text-justify my-0">Dalam bidang apa anda terlibat kerjasama dengan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi ?</label>
+        <select class="custom-select shadow-none mb-2" id="QA6">
+          <option value="Pendidikan (Pelatihan, Magang, dll)">Pendidikan (Pelatihan, Magang, dll)</option>
+          <option value="Pengabdian pda Masyarakat">Pengabdian pda Masyarakat</option>
+          <option value="Penelitian">Penelitian</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Kemampuan Bekerjasama Dalam Tim</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Staff dan tenaga kependidikan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi  tanggap dalam merespon  pada kebutuhan kami dengan tepat dan profesional</label>
+        <select class="custom-select shadow-none mb-2" id="QA7">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select>
+        <label class="text-justify my-0">Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi memberikan pendampingan/bantuan terhadap instansi kami saat dibutuhkan</label>
+        <select class="custom-select shadow-none mb-2" id="QA8">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select>
+        <label class="text-justify my-0">Kerjasama/kegiatan ini sesuai dengan harapan kami</label>
+        <select class="custom-select shadow-none mb-2" id="QA9">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select>
+        <label class="text-justify my-0">Pelaporan akhir dari hasil kegiatan kerjasama telah di buat dan dikomunikasikan dengan kami</label>
+        <select class="custom-select shadow-none mb-2" id="QA10">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Keahlian Berdasarkan Bidang</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Kami mendapatkan ilmu yang berguna dari kerjasama antara institusi kami dan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi</label>
+        <select class="custom-select shadow-none mb-2" id="QA11">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select><label class="text-justify my-0">Kerjasama antara Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi dengan Instansi kami telah kami implementasikan dengan kegiatan yang sesuai dengan MoU yang telah kami sepakati bersama</label>
+        <select class="custom-select shadow-none mb-2" id="QA12">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Komunikasi</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Pihak kami berkeinginan merealisasikan suatu kegiatan kerjasama secara rutin berkala</label>
+        <select class="custom-select shadow-none mb-2" id="QA13">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select>
+        <label class="text-justify my-0">Naskah MOU/MOA/sejenisnya disusun dan ditulis dengan tepat dan sesuai dengan maksud, tujuan dan sasaran institusi</label>
+        <select class="custom-select shadow-none mb-2" id="QA14">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Penguasaan Teknologi Informasi</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Keluwesan dalam menggunakan teknologi pada saat proses pelaksanaan kerjasama</label>
+        <select class="custom-select shadow-none mb-2" id="QA15">
+          <option value="Sesuai Harapan">Sesuai Harapan</option>
+          <option value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+          <option value="1">1</option>
+          <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
+        </select>
+        <label class="text-justify my-0">Berdasarkan jaringan kerjasama mohon Bapak/ Ibu berkenan menyebutkan hal-hal yang dibutuhkan institusi Bapak/ Ibu dalam kaitannya dengan keberlanjutan dimasa yang akan datang</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA16"></textarea>
+        <label class="text-justify my-0">Tuliskan saran-saran anda untuk kemajuan kami</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA17"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-4">
+    <div class="form-check mb-1">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" id="agree" value="true">Saya menyatakan bahwa data yang saya sampaikan benar adanya
+      </label>
+    </div>
+    <button class="btn btn-block btn-dark" type="button" name="button" id="save">
+      <span>Simpan&emsp;<i class="fa fa-paper-plane-o" aria-hidden="true"></i></span></button>
+  </div>
+
+  <!--[ ############################# footer ############################## ]-->
+
+  <div class="bg-dark shadow border-bottom border-light">
+    <div class="container-fluid">
+      <div class="row py-4">
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+          <h5 class="font-weight-bolder underline-prepend-light text-light ml-3">TEMUKAN KAMI</h5>
+          <hr class="underline-light ml-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://web.facebook.com/people/Himatro-Uniba/100014736218778"><i class="fa fa-facebook-square" aria-hidden="true"></i>&emsp;FACEBOOK</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://www.instagram.com/himatro_uniba/"><i class="fa fa-instagram" aria-hidden="true"></i>&emsp;INSTAGRAM</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://www.youtube.com/channel/UCGB8WqgPXjWc9JZygR4T0fQ/"><i class="fa fa-youtube-play" aria-hidden="true"></i>&emsp;YOUTUBE</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+          <h5 class="font-weight-bolder underline-prepend-light text-light ml-3">LAYANAN INFORMASI</h5>
+          <hr class="underline-light ml-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://dosen.unibabwi.ac.id/login.php">SIM DOSEN</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://akademik.unibabwi.ac.id/login.php">SIM AKADEMIK</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://sim.unibabwi.ac.id/login.php">SIM MAHASISWA</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://sister.unibabwi.ac.id/auth/login">SISTER UNIBA Banyuwangi</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://unibabwi.ac.id/">Situs Resmi UNIBA Banyuwangi</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+          <h5 class="font-weight-bolder underline-prepend-light text-light ml-3">TAUTAN PENTING</h5>
+          <hr class="underline-light ml-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://ristekdikti.go.id/">KEMENRISTEK</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="http://simlitabmas.ristekdikti.go.id/">SIMLITABMAS</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://simbelmawa.ristekdikti.go.id/portal/">SIMBELMAWA</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://forlap.ristekdikti.go.id/">FORLAP DIKTI</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="http://www.kopertis7.go.id/">LLDIKTI Wilayah VII</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+          <h5 class="font-weight-bolder underline-prepend-light text-light ml-3">HUBUNGI KAMI</h5>
+          <hr class="underline-light ml-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="tel:6285649757429">NO. TELP/HP : +6285649757429</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="mailto:teknikelektro@unibabwi.ac.id">EMAIL : teknikelektro@unibabwi.ac.id</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://teknikelektro.unibabwi.ac.id/admin/">ADMIN</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-dark shadow">
+    <div class="container">
+      <div class="d-flex justify-content-end">
+        <div class="py-3 auto">
+          <a class="nav-link text-light p-0 shadow-sm" href="">&copy;2020 Teknik Elektro - Universitas PGRI Banyuwangi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--[ ############################# end footer ########################## ]-->
+
+  <div class="modal fade" id="modalSaveDataElement" tabindex="-1" role="dialog" aria-labelledby="modalSaveDataLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <div class="spinner-border spinner-border"></div>
+            <br><span>Data anda sedang disimpan !</span>
+            <br><span>Anda akan segera dialihkan ke halaman utama Teknik Elektro Universitas PGRI Banyuwangi
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalErrorElement" tabindex="-1" role="dialog" aria-labelledby="modalErrorLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalErrorLabel"><b>Pemberitahuan</b></h5>
+        </div>
+        <div class="modal-body">
+          <p class="card-text text-justify">
+            Mohon maaf data anda gagal disimpan, silakan ulangi lagi
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Mengerti</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalWarningElement" tabindex="-1" role="dialog" aria-labelledby="modalWarningLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalWarningLabel"><b>Pemberitahuan</b></h5>
+        </div>
+        <div class="modal-body">
+          <p class="card-text text-justify">
+            Harap isikan semua data dengan benar !
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Mengerti</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hidden"><input class="hidden" id="QA0" type="text" disabled></div>
+  <script src="../bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="../bower_components/popper/dist/umd/popper.js" charset="utf-8"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="../bower_components/firebase/firebase-app.js" charset="utf-8"></script>
+  <script src="../bower_components/firebase/firebase-database.js" charset="utf-8"></script>
+  <script src="../bower_components/firebase/firebase-analytics.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    /* get date time */
+    var date = new String();
+    var day = ("Minggu Senin Selasa Rabu Kamis Jumat Sabtu");
+    day = day.split(" ");
+    var month = ("Januari Februari Maret April Mei Juni Juli Agustus September Oktober November Desember");
+    month = month.split(" ");
+    var vDay = new Date();
+    var vNameDay = vDay.getDay();
+    var vDate = vDay.getDate();
+    var vMonth = vDay.getMonth();
+    var vYears = vDay.getFullYear();
+    date = day[vNameDay] + ", " +vDate + " " + month[vMonth] + " " + vYears;
+    $("#QA0").val(date);
+
+    /* secret database */
+    var firebaseConfig = {
+      apiKey: "AIzaSyDjhd5f9Iu2B49nocF_Fpm1qlz5ShdyRRs",
+      authDomain: "databaseteknikelektro.firebaseapp.com",
+      databaseURL: "https://databaseteknikelektro.firebaseio.com",
+      projectId: "databaseteknikelektro",
+      storageBucket: "databaseteknikelektro.appspot.com",
+      messagingSenderId: "511683152914",
+      appId: "1:511683152914:web:4d317cf5e0bb5a40ee1ccb",
+      measurementId: "G-95NP9ZB5DH"
+    };
+    /* initialize firebase */
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    /* jQuery */
+    $(document).ready(function() {
+      /* DOM function */
+      $("h5.underline-prepend").append("&emsp;");
+      /* function and data proccess */
+      $("#save").click(function() {
+        var sending = true, QA = 17;
+        for (var i = 1; i <= QA; i ++) {
+          if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
+            sending = false;
+            break;
+          }
+        }
+        if (!sending) {
+          $("#modalWarningElement").modal({modal: "show"});
+        } else {
+          $("#modalSaveDataElement").modal({modal: "show", backdrop: "static"});
+          var dataQuestion = {
+            QA0: "Tanggal",
+            QA1: "Nama Instansi",
+            QA2: "Alamat Instansi",
+            QA3: "Nama Lengkap Responden Dan Gelar",
+            QA4: "Email",
+            QA5: "Nomor Telepon",
+            QA6: "Dalam bidang apa anda terlibat kerjasama dengan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi ?",
+            QA7: "Staff dan tenaga kependidikan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi tanggap dalam merespon pada kebutuhan kami dengan tepat dan profesional",
+            QA8: "Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi memberikan pendampingan/bantuan terhadap instansi kami saat dibutuhkan",
+            QA9: "Kerjasama/kegiatan ini sesuai dengan harapan kami",
+            QA10: "Pelaporan akhir dari hasil kegiatan kerjasama telah di buat dan dikomunikasikan dengan kami",
+            QA11: "Kami mendapatkan ilmu yang berguna dari kerjasama antara institusi kami dan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi",
+            QA12: "Kerjasama antara Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi dengan Instansi kami telah kami implementasikan dengan kegiatan yang sesuai dengan MoU yang telah kami sepakati bersama",
+            QA13: "Pihak kami berkeinginan merealisasikan suatu kegiatan kerjasama secara rutin berkala",
+            QA14: "Naskah MOU/MOA/sejenisnya disusun dan ditulis dengan tepat dan sesuai dengan maksud, tujuan dan sasaran institusi",
+            QA15: "Keluwesan dalam menggunakan teknologi pada saat proses pelaksanaan kerjasama",
+            QA16: "Berdasarkan jaringan kerjasama mohon Bapak/ Ibu berkenan menyebutkan hal-hal yang dibutuhkan institusi Bapak/ Ibu dalam kaitannya dengan keberlanjutan dimasa yang akan datang",
+            QA17: "Tuliskan saran-saran anda untuk kemajuan kami"
+          };
+          var dataResponden = {};
+          for (object in dataQuestion) {
+            dataResponden[object] = $("#" + object).val();
+          }
+          firebase.database().ref("angket-kuesioner-umpan-balik-mitra-kerjasama/question")
+          .set(dataQuestion, function(error) {
+            if (!error) {
+              firebase.database().ref("angket-kuesioner-umpan-balik-mitra-kerjasama/data")
+              .push(dataResponden, function(error) {
+                if (error) {
+                  $("#modalSaveDataElement").modal("hide");
+                  $("#modalErrorElement").modal("show");
+                } else {
+                  location.href="https://teknikelektro.unibabwi.ac.id/";
+                }
+              });
+            } else {
+              $("#modalSaveDataElement").modal("hide");
+              $("#modalErrorElement").modal("show");
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
