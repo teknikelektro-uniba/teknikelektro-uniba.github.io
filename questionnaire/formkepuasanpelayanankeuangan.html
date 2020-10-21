@@ -345,6 +345,7 @@
     </div>
   </div>
 
+  <div class="hidden"><input class="hidden" id="QA0" type="text" disabled></div>
   <script src="../bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="../bower_components/popper/dist/umd/popper.js" charset="utf-8"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
@@ -352,6 +353,20 @@
   <script src="../bower_components/firebase/firebase-database.js" charset="utf-8"></script>
   <script src="../bower_components/firebase/firebase-analytics.js" charset="utf-8"></script>
   <script type="text/javascript">
+    /* get date time */
+    var date = new String();
+    var day = ("Minggu Senin Selasa Rabu Kamis Jumat Sabtu");
+    day = day.split(" ");
+    var month = ("Januari Februari Maret April Mei Juni Juli Agustus September Oktober November Desember");
+    month = month.split(" ");
+    var vDay = new Date();
+    var vNameDay = vDay.getDay();
+    var vDate = vDay.getDate();
+    var vMonth = vDay.getMonth();
+    var vYears = vDay.getFullYear();
+    date = day[vNameDay] + ", " +vDate + " " + month[vMonth] + " " + vYears;
+    $("#QA0").val(date);
+
     /* secret database */
     var firebaseConfig = {
       apiKey: "AIzaSyDjhd5f9Iu2B49nocF_Fpm1qlz5ShdyRRs",
@@ -384,6 +399,7 @@
         } else {
           $("#modalSaveDataElement").modal({modal: "show", backdrop: "static"});
           var dataQuestion = {
+            QA0: "Tanggal",
             QA1: "Nama",
             QA2: "Nomor Induk Mahasiswa",
             QA3: "Program Studi",
@@ -418,6 +434,9 @@
                   location.href="https://teknikelektro.unibabwi.ac.id/";
                 }
               });
+            } else {
+              $("#modalSaveDataElement").modal("hide");
+              $("#modalErrorElement").modal("show");
             }
           });
         }
