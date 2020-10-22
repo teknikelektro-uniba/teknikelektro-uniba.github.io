@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#343a40">
+  <meta name="msapplication-navbutton-color" content="#343a40">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#343a40">
+  <meta name="programmer" content="https://github.com/ardirjs">
+  <meta name="description" content="https://github.com/ardirjs">
+  <meta name="keywords" content="https://github.com/ardirjs">
+  <meta name="author" content="https://github.com/ardirjs">
+  <meta name="title" content="https://github.com/ardirjs">
+  <meta name="copyright" content="https://github.com/ardirjs">
+  <meta Http-Equiv="Expires" content="0">
+  <meta Http-Equiv="Pragma" content="No-Cache">
+  <meta Http-Equiv="Content-type" content="Text/Html">
+  <meta Http-Equiv="Cache-Control" content="No-Cache">
+  <meta Http-Equiv="Cache-Control" content="No-Store">
+  <meta Http-Equiv="Content-Language" content="En-Us">
+  <meta Http-Equiv="X-UA-Compatible" content="IE=Edge">
+  <link href="../asset/icon/uniba.png" rel="shortcut icon">
+  <link href="../asset/icon/uniba.png" rel="apple-touch-icon">
+  <link href="../asset/icon/uniba.png" rel="apple-touch-icon-precomposed">
+  <title>Formulir Kuesioner Alumni</title>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../asset/style/custom-bootstrap.css">
+</head>
+<body class="bg-light">
+
+  <!--[ ############################# header ############################## ]-->
+
+  <div class="jumbotron py-5 mb-0 bg-dark rounded-0 border-bottom border-light">
+    <div class="container">
+      <a class="text-light font-weight-bolder nav-link px-0" href="https://teknikelektro.unibabwi.ac.id/">
+        <div class="row align-items-center">
+          <div class="pr-2 col-auto mb-2">
+            <img src="../asset/icon/uniba.png" alt="uniba">
+          </div>
+          <div class="col-auto py-2 mb-2">
+            <span class="text-light font-weight-bolder h3"><u>TEKNIK ELEKTRO</u></span><br>
+            <span class="text-light font-weight-bolder h5">Fakultas Teknik - Universitas PGRI Banyuwangi</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="bg-dark mb-4 shadow">
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <div class="py-3 auto">
+          <h4 class="font-weight-bolder text-light text-center">Formulir Kuesioner Alumni</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--[ ############################# end header ########################## ]-->
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Identitas Diri</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Email</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA1">
+        <label class="text-justify my-0">Nama Lengkap</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA2">
+        <label class="text-justify my-0">Jenis Kelamin</label>
+        <select class="custom-select shadow-none mb-2" id="QA3">
+          <option value="Laki - Laki">Laki - Laki</option>
+          <option value="Perempuan">Perempuan</option>
+        </select>
+        <label class="text-justify my-0">Tempat dan Tanggal Lahir</label>
+        <div class="row">
+          <div class="col-sm-12">
+            <input class="form-control shadow-none mb-2" type="text" id="QA4" placeholder="Tempat Lahir">
+          </div>
+          <div class="col-sm-4">
+            <select class="custom-select shadow-none mb-2" id="QA5">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <select class="custom-select shadow-none mb-2" id="QA6">
+              <option value="Januari">Januari</option>
+              <option value="Februari">Februari</option>
+              <option value="Maret">Maret</option>
+              <option value="April">April</option>
+              <option value="Mei">Mei</option>
+              <option value="Juni">Juni</option>
+              <option value="Juli">Juli</option>
+              <option value="Agustus">Agustus</option>
+              <option value="September">September</option>
+              <option value="Oktober">Oktober</option>
+              <option value="November">November</option>
+              <option value="Desember">Desember</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <select class="custom-select shadow-none mb-2" id="QA7">
+              <option value="1970">1970</option>
+              <option value="1971">1971</option>
+              <option value="1972">1972</option>
+              <option value="1973">1973</option>
+              <option value="1974">1974</option>
+              <option value="1975">1975</option>
+              <option value="1976">1976</option>
+              <option value="1977">1977</option>
+              <option value="1978">1978</option>
+              <option value="1979">1979</option>
+              <option value="1980">1980</option>
+              <option value="1981">1981</option>
+              <option value="1982">1982</option>
+              <option value="1983">1983</option>
+              <option value="1984">1984</option>
+              <option value="1985">1985</option>
+              <option value="1986">1986</option>
+              <option value="1987">1987</option>
+              <option value="1988">1988</option>
+              <option value="1989">1989</option>
+              <option value="1990">1990</option>
+              <option value="1991">1991</option>
+              <option value="1992">1992</option>
+              <option value="1993">1993</option>
+              <option value="1994">1994</option>
+              <option value="1995">1995</option>
+              <option value="1996">1996</option>
+              <option value="1997">1997</option>
+              <option value="1998">1998</option>
+              <option value="1999">1999</option>
+              <option value="2000">2000</option>
+              <option value="2000">2001</option>
+              <option value="2000">2002</option>
+              <option value="2000">2003</option>
+              <option value="2000">2004</option>
+              <option value="2000">2005</option>
+              <option value="2000">2006</option>
+              <option value="2000">2007</option>
+              <option value="2000">2008</option>
+              <option value="2000">2009</option>
+              <option value="2000">2010</option>
+              <option value="2000">2011</option>
+              <option value="2000">2012</option>
+              <option value="2000">2013</option>
+              <option value="2000">2014</option>
+              <option value="2000">2015</option>
+              <option value="2000">2016</option>
+              <option value="2000">2017</option>
+              <option value="2000">2018</option>
+              <option value="2000">2019</option>
+              <option value="2000">2020</option>
+            </select>
+          </div>
+        </div>
+        <label class="text-justify my-0">Alamat Rumah</label>
+        <div class="row">
+          <div class="col-sm-6">
+            <input class="form-control shadow-none mb-2" type="text" id="QA8" placeholder="RT">
+          </div>
+          <div class="col-sm-6">
+            <input class="form-control shadow-none mb-2" type="text" id="QA9" placeholder="RW">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <input class="form-control shadow-none mb-2" type="text" id="QA10" placeholder="Dusun">
+          </div>
+          <div class="col-sm-6">
+            <input class="form-control shadow-none mb-2" type="text" id="QA11" placeholder="Desa">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <input class="form-control shadow-none mb-2" type="text" id="QA12" placeholder="Kecamatan">
+          </div>
+          <div class="col-sm-6">
+            <input class="form-control shadow-none mb-2" type="text" id="QA13" placeholder="Kabupaten">
+          </div>
+        </div>
+        <label class="text-justify my-0">Alamat Kantor</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA14"></textarea>
+        <label class="text-justify my-0">Nomor Telepon/HP</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA15">
+        <label class="text-justify my-0">Tahun Angkatan</label>
+        <select class="custom-select shadow-none mb-2" id="QA16">
+          <option value="2000">2000</option>
+          <option value="2000">2001</option>
+          <option value="2000">2002</option>
+          <option value="2000">2003</option>
+          <option value="2000">2004</option>
+          <option value="2000">2005</option>
+          <option value="2000">2006</option>
+          <option value="2000">2007</option>
+          <option value="2000">2008</option>
+          <option value="2000">2009</option>
+          <option value="2000">2010</option>
+          <option value="2000">2011</option>
+          <option value="2000">2012</option>
+          <option value="2000">2013</option>
+          <option value="2000">2014</option>
+          <option value="2000">2015</option>
+          <option value="2000">2016</option>
+          <option value="2000">2017</option>
+          <option value="2000">2018</option>
+          <option value="2000">2019</option>
+          <option value="2000">2020</option>
+        </select>
+        <label class="text-justify my-0">Tahun Lulus</label>
+        <select class="custom-select shadow-none mb-2" id="QA17">
+          <option value="2000">2000</option>
+          <option value="2000">2001</option>
+          <option value="2000">2002</option>
+          <option value="2000">2003</option>
+          <option value="2000">2004</option>
+          <option value="2000">2005</option>
+          <option value="2000">2006</option>
+          <option value="2000">2007</option>
+          <option value="2000">2008</option>
+          <option value="2000">2009</option>
+          <option value="2000">2010</option>
+          <option value="2000">2011</option>
+          <option value="2000">2012</option>
+          <option value="2000">2013</option>
+          <option value="2000">2014</option>
+          <option value="2000">2015</option>
+          <option value="2000">2016</option>
+          <option value="2000">2017</option>
+          <option value="2000">2018</option>
+          <option value="2000">2019</option>
+          <option value="2000">2020</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Riwayat Pekerjaan</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Lama Menunggu Pekerjaan</label>
+        <select class="custom-select shadow-none mb-2" id="QA18">
+          <option value="Kurang dari 6 bulan">Kurang dari 6 bulan</option>
+          <option value="Antara 6 sampai 12 bulan">Antara 6 sampai 12 bulan</option>
+          <option value="Antara 13 sampai 18 bulan">Antara 13 sampai 18 bulan</option>
+          <option value="Lebih dari 18 bulan">Lebih dari 18 bulan</option>
+        </select>
+        <label class="text-justify my-0">Sumber Informasi Pekerjaan</label>
+        <select class="custom-select shadow-none mb-2" id="QA19">
+          <option value="Teman">Teman</option>
+          <option value="Media Cetak">Media Cetak</option>
+          <option value="Media Elektronik">Media Elektronik</option>
+          <option value="Almamater/Fakultas">Almamater/Fakultas</option>
+          <option value="Orang Tua/Saudara">Orang Tua/Saudara</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <label class="text-justify my-0">Pekerjaan Pertama Anda</label>
+        <select class="custom-select shadow-none mb-2" id="QA20">
+          <option value="PNS">PNS</option>
+          <option value="PNS Guru/Dosen">PNS Guru/Dosen</option>
+          <option value="Guru/Dosen Swasta">Guru/Dosen Swasta</option>
+          <option value="Karyawan Swasta Nasional/Multinasional">Karyawan Swasta Nasional/Multinasional</option>
+          <option value="Karyawan Swasta Lokal/Regional">Karyawan Swasta Lokal/Regional</option>
+          <option value="Karyawan BUMN">Karyawan BUMN</option>
+          <option value="TNI/POLRI">TNI/POLRI</option>
+          <option value="Wiraswasta/Wirausaha">Wiraswasta/Wirausaha</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <label class="text-justify my-0">Kapan Mulai Bekerja</label>
+        <div class="row">
+          <div class="col-sm-4">
+            <select class="custom-select shadow-none mb-2" id="QA21">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <select class="custom-select shadow-none mb-2" id="QA22">
+              <option value="Januari">Januari</option>
+              <option value="Februari">Februari</option>
+              <option value="Maret">Maret</option>
+              <option value="April">April</option>
+              <option value="Mei">Mei</option>
+              <option value="Juni">Juni</option>
+              <option value="Juli">Juli</option>
+              <option value="Agustus">Agustus</option>
+              <option value="September">September</option>
+              <option value="Oktober">Oktober</option>
+              <option value="November">November</option>
+              <option value="Desember">Desember</option>
+            </select>
+          </div>
+          <div class="col-sm-4">
+            <select class="custom-select shadow-none mb-2" id="QA23">
+              <option value="1970">1970</option>
+              <option value="1971">1971</option>
+              <option value="1972">1972</option>
+              <option value="1973">1973</option>
+              <option value="1974">1974</option>
+              <option value="1975">1975</option>
+              <option value="1976">1976</option>
+              <option value="1977">1977</option>
+              <option value="1978">1978</option>
+              <option value="1979">1979</option>
+              <option value="1980">1980</option>
+              <option value="1981">1981</option>
+              <option value="1982">1982</option>
+              <option value="1983">1983</option>
+              <option value="1984">1984</option>
+              <option value="1985">1985</option>
+              <option value="1986">1986</option>
+              <option value="1987">1987</option>
+              <option value="1988">1988</option>
+              <option value="1989">1989</option>
+              <option value="1990">1990</option>
+              <option value="1991">1991</option>
+              <option value="1992">1992</option>
+              <option value="1993">1993</option>
+              <option value="1994">1994</option>
+              <option value="1995">1995</option>
+              <option value="1996">1996</option>
+              <option value="1997">1997</option>
+              <option value="1998">1998</option>
+              <option value="1999">1999</option>
+              <option value="2000">2000</option>
+              <option value="2000">2001</option>
+              <option value="2000">2002</option>
+              <option value="2000">2003</option>
+              <option value="2000">2004</option>
+              <option value="2000">2005</option>
+              <option value="2000">2006</option>
+              <option value="2000">2007</option>
+              <option value="2000">2008</option>
+              <option value="2000">2009</option>
+              <option value="2000">2010</option>
+              <option value="2000">2011</option>
+              <option value="2000">2012</option>
+              <option value="2000">2013</option>
+              <option value="2000">2014</option>
+              <option value="2000">2015</option>
+              <option value="2000">2016</option>
+              <option value="2000">2017</option>
+              <option value="2000">2018</option>
+              <option value="2000">2019</option>
+              <option value="2000">2020</option>
+            </select>
+          </div>
+        </div>
+        <label class="text-justify my-0">Nama Instansi Pekerjaan</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA24">
+        <label class="text-justify my-0">Posisi/Bidang Usaha/Pekerjaan</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA25">
+        <label class="text-justify my-0">Alamat Instansi</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA26"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Pekerjaan Saat Ini</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Pekerjaan Yang Dijalani Saat Ini</label>
+        <select class="custom-select shadow-none mb-2" id="QA27">
+          <option value="PNS">PNS</option>
+          <option value="PNS Guru/Dosen">PNS Guru/Dosen</option>
+          <option value="Guru/Dosen Swasta">Guru/Dosen Swasta</option>
+          <option value="Karyawan Swasta Nasional/Multinasional">Karyawan Swasta Nasional/Multinasional</option>
+          <option value="Karyawan Swasta Lokal/Regional">Karyawan Swasta Lokal/Regional</option>
+          <option value="Karyawan BUMN">Karyawan BUMN</option>
+          <option value="TNI/POLRI">TNI/POLRI</option>
+          <option value="Wiraswasta/Wirausaha">Wiraswasta/Wirausaha</option>
+          <option value="Lainnya">Lainnya</option>
+        </select>
+        <label class="text-justify my-0">Posisi/Bidang Usaha/Pekerjaan</label>
+        <input class="form-control shadow-none mb-2" type="text" id="QA28">
+        <label class="text-justify my-0">Alamat Instansi</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA29"></textarea>
+        <label class="text-justify my-0">Apakah Materi Yang Anda Peroleh Sesuai Dengan Bidang Tersebut dan Terpenuhi</label>
+        <select class="custom-select shadow-none mb-2" id="QA30">
+          <option value="Sangat Kurang">Sangat Kurang</option>
+          <option value="Kurang">Kurang</option>
+          <option value="Cukup">Cukup</option>
+          <option value="Terpenuhi">Terpenuhi</option>
+          <option value="Sangat Terpenuhi">Sangat Terpenuhi</option>
+        </select>
+        <label class="text-justify my-0">Seberapa Besar Persentase Kesesuaian Pengetahuan Dan Keterampilan Yang Saudara Peroleh Dari Program Studi Dengan Tuntutan Pekerjaan Pertama Saudara</label>
+        <select class="custom-select shadow-none mb-2" id="QA31">
+          <option value="Kurang dari 50%">Kurang dari 50%</option>
+          <option value="Antara 51 sampai 59%">Antara 51 sampai 59%</option>
+          <option value="Antara 60 sampai 75%">Antara 60 sampai 75%</option>
+          <option value="Antara 76 sampai 85%">Antara 76 sampai 85%</option>
+          <option value="Lebih dari 86%">Lebih dari 86%</option>
+        </select>
+        <label class="text-justify my-0">Sejauh Mana Pekerjaan Saudara Membutuhkan Kemampuan Bahasa Inggris</label>
+        <select class="custom-select shadow-none mb-2" id="QA32">
+          <option value="Tidak membutuhkan">Tidak membutuhkan</option>
+          <option value="Kurang membutuhkan">Kurang membutuhkan</option>
+          <option value="Cukup membutuhkan">Cukup membutuhkan</option>
+          <option value="Membutuhkan">Membutuhkan</option>
+          <option value="Sangat membutuhkan">Sangat membutuhkan</option>
+        </select>
+        <label class="text-justify my-0">Sejauh Mana Pekerjaan Saudara Membutuhkan Teknologi Informasi</label>
+        <select class="custom-select shadow-none mb-2" id="QA33">
+          <option value="Tidak membutuhkan">Tidak membutuhkan</option>
+          <option value="Kurang membutuhkan">Kurang membutuhkan</option>
+          <option value="Cukup membutuhkan">Cukup membutuhkan</option>
+          <option value="Membutuhkan">Membutuhkan</option>
+          <option value="Sangat membutuhkan">Sangat membutuhkan</option>
+        </select>
+        <label class="text-justify my-0">Apakah Instansi Di Tempat Saudara Bekerja Mensyaratkan IPK</label>
+        <select class="custom-select shadow-none mb-2" id="QA34">
+          <option value="Iya">Iya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-3">
+    <h5 class="font-weight-bolder underline-prepend">Masukan Bagi Program Studi</h5>
+    <hr class="underline">
+    <div class="card shadow-sm border border-dark">
+      <div class="card-body">
+        <label class="text-justify my-0">Apakah Materi Pendidikan Di Prodi Teknik Elektro Universitas PGRI Banyuwangi Bermanfaat Untuk Pekerjaan Anda</label>
+        <select class="custom-select shadow-none mb-2" id="QA35">
+          <option value="Iya">Iya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+        <label class="text-justify my-0">Menurut Anda Bekal Tambahan Apa Yang Diperlukan Bagi Lulusan Prodi Teknik Elektro Universitas PGRI Banyuwangi Untuk Mendukung Pekerjaan (Soft Skills)</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA36"></textarea>
+        <label class="text-justify my-0">Berikan Saran Untuk Prodi Teknik Elektro Universitas PGRI Banyuwangi</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA37"></textarea>
+        <label class="text-justify my-0">Berikan Saran Untuk Pengembangan Institusi (Organisasi Fakultas Dan Pengembangan Program Studi)</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA38"></textarea>
+        <label class="text-justify my-0">Berikan Saran Untuk Pengembangan Kurikulum (Mata Kuliah, Beban SKS)</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA39"></textarea>
+        <label class="text-justify my-0">Berikan Saran Untuk Pengembangan Infra Struktur (Laboratorium, Ruang Kuliah, Perpustakaan)</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA40"></textarea>
+        <label class="text-justify my-0">Berikan Saran Untuk Pengembangan Kemahasiswaan</label>
+        <textarea class="form-control shadow-none mb-2" rows="2" id="QA41"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mb-4">
+    <div class="form-check mb-1">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" id="agree" value="true">Saya menyatakan bahwa data yang saya sampaikan benar adanya
+      </label>
+    </div>
+    <button class="btn btn-block btn-dark" type="button" name="button" id="save">
+      <span>Simpan&emsp;<i class="fa fa-paper-plane-o" aria-hidden="true"></i></span></button>
+  </div>
+
+  <!--[ ############################# footer ############################## ]-->
+
+  <div class="bg-dark shadow border-bottom border-light">
+    <div class="container-fluid">
+      <div class="row py-4">
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+          <h5 class="font-weight-bolder underline-prepend-light text-light ml-3">TEMUKAN KAMI</h5>
+          <hr class="underline-light ml-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://web.facebook.com/people/Himatro-Uniba/100014736218778"><i class="fa fa-facebook-square" aria-hidden="true"></i>&emsp;FACEBOOK</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://www.instagram.com/himatro_uniba/"><i class="fa fa-instagram" aria-hidden="true"></i>&emsp;INSTAGRAM</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://www.youtube.com/channel/UCGB8WqgPXjWc9JZygR4T0fQ/"><i class="fa fa-youtube-play" aria-hidden="true"></i>&emsp;YOUTUBE</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+          <h5 class="font-weight-bolder underline-prepend-light text-light ml-3">LAYANAN INFORMASI</h5>
+          <hr class="underline-light ml-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://dosen.unibabwi.ac.id/login.php">SIM DOSEN</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://akademik.unibabwi.ac.id/login.php">SIM AKADEMIK</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://sim.unibabwi.ac.id/login.php">SIM MAHASISWA</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://sister.unibabwi.ac.id/auth/login">SISTER UNIBA Banyuwangi</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://unibabwi.ac.id/">Situs Resmi UNIBA Banyuwangi</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+          <h5 class="font-weight-bolder underline-prepend-light text-light ml-3">TAUTAN PENTING</h5>
+          <hr class="underline-light ml-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://ristekdikti.go.id/">KEMENRISTEK</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="http://simlitabmas.ristekdikti.go.id/">SIMLITABMAS</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://simbelmawa.ristekdikti.go.id/portal/">SIMBELMAWA</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://forlap.ristekdikti.go.id/">FORLAP DIKTI</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="http://www.kopertis7.go.id/">LLDIKTI Wilayah VII</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
+          <h5 class="font-weight-bolder underline-prepend-light text-light ml-3">HUBUNGI KAMI</h5>
+          <hr class="underline-light ml-3">
+          <ul class="nav flex-column">
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="tel:6285649757429">NO. TELP/HP : +6285649757429</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="mailto:teknikelektro@unibabwi.ac.id">EMAIL : teknikelektro@unibabwi.ac.id</a></li>
+            <li class="nav-item"><a class="nav-link text-light py-0 small" target="_blank" href="https://teknikelektro.unibabwi.ac.id/admin/">ADMIN</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-dark shadow">
+    <div class="container">
+      <div class="d-flex justify-content-end">
+        <div class="py-3 auto">
+          <a class="nav-link text-light p-0 shadow-sm" href="">&copy;2020 Teknik Elektro - Universitas PGRI Banyuwangi</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--[ ############################# end footer ########################## ]-->
+
+  <div class="modal fade" id="modalSaveDataElement" tabindex="-1" role="dialog" aria-labelledby="modalSaveDataLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <div class="spinner-border spinner-border"></div>
+            <br><span>Data anda sedang disimpan !</span>
+            <br><span>Anda akan segera dialihkan ke halaman utama Teknik Elektro Universitas PGRI Banyuwangi
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalErrorElement" tabindex="-1" role="dialog" aria-labelledby="modalErrorLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalErrorLabel"><b>Pemberitahuan</b></h5>
+        </div>
+        <div class="modal-body">
+          <p class="card-text text-justify">
+            Mohon maaf data anda gagal disimpan, silakan ulangi lagi
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Mengerti</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalWarningElement" tabindex="-1" role="dialog" aria-labelledby="modalWarningLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalWarningLabel"><b>Pemberitahuan</b></h5>
+        </div>
+        <div class="modal-body">
+          <p class="card-text text-justify">
+            Harap isikan semua data dengan benar !
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Mengerti</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hidden"><input class="hidden" id="QA0" type="text" disabled></div>
+  <script src="../bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <script src="../bower_components/popper/dist/umd/popper.js" charset="utf-8"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="../bower_components/firebase/firebase-app.js" charset="utf-8"></script>
+  <script src="../bower_components/firebase/firebase-database.js" charset="utf-8"></script>
+  <script src="../bower_components/firebase/firebase-analytics.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    /* get date time */
+    var date = new String();
+    var day = ("Minggu Senin Selasa Rabu Kamis Jumat Sabtu");
+    day = day.split(" ");
+    var month = ("Januari Februari Maret April Mei Juni Juli Agustus September Oktober November Desember");
+    month = month.split(" ");
+    var vDay = new Date();
+    var vNameDay = vDay.getDay();
+    var vDate = vDay.getDate();
+    var vMonth = vDay.getMonth();
+    var vYears = vDay.getFullYear();
+    date = day[vNameDay] + ", " +vDate + " " + month[vMonth] + " " + vYears;
+    $("#QA0").val(date);
+
+    /* secret database */
+    var firebaseConfig = {
+      apiKey: "AIzaSyDjhd5f9Iu2B49nocF_Fpm1qlz5ShdyRRs",
+      authDomain: "databaseteknikelektro.firebaseapp.com",
+      databaseURL: "https://databaseteknikelektro.firebaseio.com",
+      projectId: "databaseteknikelektro",
+      storageBucket: "databaseteknikelektro.appspot.com",
+      messagingSenderId: "511683152914",
+      appId: "1:511683152914:web:4d317cf5e0bb5a40ee1ccb",
+      measurementId: "G-95NP9ZB5DH"
+    };
+    /* initialize firebase */
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    /* jQuery */
+    $(document).ready(function() {
+      /* DOM function */
+      $("h5.underline-prepend").append("&emsp;");
+      /* function and data proccess */
+      $("#save").click(function() {
+        var sending = true, QA = 41;
+        for (var i = 1; i <= QA; i ++) {
+          if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
+            sending = false;
+            break;
+          }
+        }
+        if (!sending) {
+          $("#modalWarningElement").modal({modal: "show"});
+        } else {
+          $("#modalSaveDataElement").modal({modal: "show", backdrop: "static"});
+          var dataQuestion = {
+            QA0: "Tanggal",
+            QA1: "Email",
+            QA2: "Nama Lengkap",
+            QA3: "Jenis Kelamin",
+            QA4: "Tempat Lahir",
+            QA5: "Tanggal Lahir",
+            QA6: "Bulan Lahir",
+            QA7: "Tahun Lahir",
+            QA8: "RT",
+            QA9: "RW",
+            QA10: "Dusun",
+            QA11: "Desa",
+            QA12: "Kecamatan",
+            QA13: "Kabupaten",
+            QA14: "Alamat Lengkap Kantor",
+            QA15: "Nomor Telepon/HP",
+            QA16: "Tahun Angkatan",
+            QA17: "Tahun Lulus",
+            QA18: "Lama Menunggu Pekerjaan",
+            QA19: "Sumber Informasi Pekerjaan",
+            QA20: "Pekerjaan Pertama Anda",
+            QA21: "Tanggal Mulai Bekerja",
+            QA22: "Bulan Mulai Bekerja",
+            QA23: "Tahun Mulai Bekerja",
+            QA24: "Nama Instansi Pekerjaan",
+            QA25: "Posisi/Bidang Usaha/Pekerjaan",
+            QA26: "Alamat Instansi",
+            QA27: "Pekerjaan Yang Dijalani Saat Ini",
+            QA28: "Posisi/Bidang Usaha/Pekerjaan",
+            QA29: "Alamat Instansi",
+            QA30: "Apakah Materi Yang Anda Peroleh Sesuai Dengan Bidang Tersebut dan Terpenuhi",
+            QA31: "Seberapa Besar Persentase Kesesuaian Pengetahuan Dan Keterampilan Yang Saudara Peroleh Dari Program Studi Dengan Tuntutan Pekerjaan Pertama Saudara",
+            QA32: "Sejauh Mana Pekerjaan Saudara Membutuhkan Kemampuan Bahasa Inggris",
+            QA33: "Sejauh Mana Pekerjaan Saudara Membutuhkan Teknologi Informasi",
+            QA34: "Apakah Instansi Di Tempat Saudara Bekerja Mensyaratkan IPK",
+            QA35: "Apakah Materi Pendidikan Di Prodi Teknik Elektro Universitas PGRI Banyuwangi Bermanfaat Untuk Pekerjaan Anda",
+            QA36: "Menurut Anda Bekal Tambahan Apa Yang Diperlukan Bagi Lulusan Prodi Teknik Elektro Universitas PGRI Banyuwangi Untuk Mendukung Pekerjaan (Soft Skills)",
+            QA37: "Berikan Saran Untuk Prodi Teknik Elektro Universitas PGRI Banyuwangi",
+            QA38: "Berikan Saran Untuk Pengembangan Institusi (Organisasi Fakultas Dan Pengembangan Program Studi)",
+            QA39: "Berikan Saran Untuk Pengembangan Kurikulum (Mata Kuliah, Beban SKS)",
+            QA40: "Berikan Saran Untuk Pengembangan Infra Struktur (Laboratorium, Ruang Kuliah, Perpustakaan)",
+            QA41: "Berikan Saran Untuk Pengembangan Kemahasiswaan"
+          };
+          var dataResponden = {};
+          for (object in dataQuestion) {
+            dataResponden[object] = $("#" + object).val();
+          }
+          firebase.database().ref("formulir-kuesioner-alumni/question")
+          .set(dataQuestion, function(error) {
+            if (!error) {
+              firebase.database().ref("formulir-kuesioner-alumni/data")
+              .push(dataResponden, function(error) {
+                if (error) {
+                  $("#modalSaveDataElement").modal("hide");
+                  $("#modalErrorElement").modal("show");
+                } else {
+                  location.href="https://teknikelektro.unibabwi.ac.id/";
+                }
+              });
+            } else {
+              $("#modalSaveDataElement").modal("hide");
+              $("#modalErrorElement").modal("show");
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
