@@ -55,5 +55,11 @@ hr.underline-light {
 .hidden {
   display: none;
   visibility: hidden;
-  z-index: -999;
+  z-index: 999;
+}
+
+.show {
+  display: block;
+  visibility: visible;
+  z-index: 999;
 }

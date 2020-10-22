@@ -23,7 +23,7 @@
   <link href="../asset/icon/uniba.png" rel="shortcut icon">
   <link href="../asset/icon/uniba.png" rel="apple-touch-icon">
   <link href="../asset/icon/uniba.png" rel="apple-touch-icon-precomposed">
-  <title>Angket Kepuasan Mahasiswa Terhadap Pelayanan Keuangan</title>
+  <title>Admin</title>
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../asset/style/custom-bootstrap.css">
@@ -60,34 +60,94 @@
 
   <!--[ ############################# end header ########################## ]-->
 
-  <div class="container my-4">
-    <ul class="nav nav-pills bg-dark text-light p-2 rounded shadow">
-      <li class="dropdown p-2">
-        <a class="btn btn-sm btn-secondary shadow-none dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu&emsp;</a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item shadow-none text-left" data-toggle="pill" href="#angket-kepuasan-mahasiswa-terhadap-pelayanan-akademik">Angket Kepuasan Mahasiswa Terhadap Pelayanan Akademik</a>
-          <a class="dropdown-item shadow-none text-left" data-toggle="pill" href="#angket-kepuasan-mahasiswa-terhadap-pelayanan-keuangan">Angket Kepuasan Mahasiswa Terhadap Pelayanan Keuangan</a>
-          <a class="dropdown-item shadow-none text-left" data-toggle="pill" href="#angket-kepuasan-mahasiswa-terhadap-pelayanan-perpustakaan">Angket Kepuasan Mahasiswa Terhadap Pelayanan Perpustakaan</a>
-          <a class="dropdown-item shadow-none text-left" data-toggle="pill" href="#angket-kepuasan-pengguna-lulusan-program-studi-teknik-elektro">Angket Kepuasan Pengguna Lulusan Program Studi Teknik Elektro</a>
-          <a class="dropdown-item shadow-none text-left" data-toggle="pill" href="#angket-kuesioner-umpan-balik-mitra-kerjasama">Angket Kuesioner Umpan Balik Mitra Kerjasama</a>
+  <div class="container mb-4">
+    <div class="bg-dark shadow rounded">
+      <div class="row py-2 px-4">
+        <div class="col-auto p-1">
+          <div class="dropdown">
+            <button class="btn btn-dark border border-light dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pilih Data Ditampilkan
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+              <a class="dropdown-item btn" id="angketkepuasanmahasiswaterhadappelayananakademik">Angket Kepuasan Mahasiswa Terhadap Pelayanan Akademik</a>
+              <a class="dropdown-item btn" id="angketkepuasanmahasiswaterhadappelayananperpustakaan">Angket Kepuasan Mahasiswa Terhadap Pelayanan Perpustakaan</a>
+              <a class="dropdown-item btn" id="angketkepuasanpelayanankeuangan">Angket Kepuasan Pelayanan Keuangan</a>
+              <a class="dropdown-item btn" id="angketkepuasanpenggunalulusan">Angket Kepuasan Pengguna Lulusan</a>
+              <a class="dropdown-item btn" id="angketkuesionerumpanbalikmitrakerjasama">Angket Kuesioner Umpan Balik Mitra Kerjasama</a>
+              <a class="dropdown-item btn" id="formulirbiodatamahasiswa">Formulir Biodata Mahasiswa</a>
+              <a class="dropdown-item btn" id="formulirkuesioneralumni">Formulir Kuesioner Alumni</a>
+              <a class="dropdown-item btn" id="formulirpendaftaranmahasiswabaru">Formulir Pendaftaran Mahasiswa Baru</a>
+            </div>
+          </div>
         </div>
-      </li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div class="tab-pane container active" id="angket-kepuasan-mahasiswa-terhadap-pelayanan-akademik">1</div>
-      <div class="tab-pane container fade" id="angket-kepuasan-mahasiswa-terhadap-pelayanan-keuangan">2</div>
-      <div class="tab-pane container fade" id="angket-kepuasan-mahasiswa-terhadap-pelayanan-perpustakaan">3</div>
-      <div class="tab-pane container fade" id="angket-kepuasan-pengguna-lulusan-program-studi-teknik-elektro">4</div>
-      <div class="tab-pane container fade" id="angket-kuesioner-umpan-balik-mitra-kerjasama">5</div>
+        <div class="col-auto p-1">
+          <button class="btn btn-dark border border-light" type="button">Delete</button>
+        </div>
+        <div class="col-auto p-1">
+          <button class="btn btn-dark border border-light" type="button">Refresh</button>
+        </div>
+        <div class="col-auto p-1">
+          <button class="btn btn-dark border border-light" type="button">Export JSON</button>
+        </div>
+        <div class="col-auto p-1">
+          <button class="btn btn-dark border border-light" type="button">Export CSV</button>
+        </div>
+      </div>
     </div>
   </div>
 
+  <div class="container mb-4">
+    <h5 class="font-weight-bolder underline-prepend" id="header-dropdown">Angket Kepuasan Mahasiswa Terhadap Pelayanan Akademik</h5>
+    <hr class="underline">
+    <div class="mb-3"></div>
+    <div id="not-found" class="show">
+      <div class="bg-dark card shadow-sm border border-dark">
+        <div class="card-body">
+          <span class="text-light">Data tidak ditemukan</span>
+        </div>
+      </div>
+    </div>
+    <table id="table-data" class="table table-dark table-hover hidden">
+      <thead><tr id="thead"></tr></thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
 
-
-
-
-
+  <!--------------------------------------------------------------------------->
+  <!--[ modal ]---------------------------------------------------------------->
+  <!--[ login panel ]-->
+  <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h4 class="font-weight-bolder underline-prepend">Login</h4>
+          <hr class="underline">
+          <input class="form-control shadow-none mb-2" type="text" id="username" placeholder="Username">
+          <input class="form-control shadow-none mb-2" type="text" id="password" placeholder="Password">
+          <button class="btn btn-dark btn-block shadow-none" type="button" id="login">
+            <span><i class="fa fa-sign-in" aria-hidden="true"></i>&emsp;Login</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[ loading panel ]-->
+  <div class="modal fade" id="modalLoading" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div class="text-center">
+            <div class="d-flex justify-content-center my-4" id="logLoading">
+              <div class="pr-3 auto"><div class="spinner-border spinner-border"></div></div>
+              <div class="p auto mt-1"><span class="font-weight-bolder">Sedang memuat ...</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[ end modal ]------------------------------------------------------------>
+  <!--------------------------------------------------------------------------->
 
   <!--[ ############################# footer ############################## ]-->
 
@@ -154,6 +214,7 @@
   <script src="../bower_components/popper/dist/umd/popper.js" charset="utf-8"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
   <script src="../bower_components/firebase/firebase-app.js" charset="utf-8"></script>
+  <script src="../bower_components/firebase/firebase-auth.js" charset="utf-8"></script>
   <script src="../bower_components/firebase/firebase-database.js" charset="utf-8"></script>
   <script src="../bower_components/firebase/firebase-analytics.js" charset="utf-8"></script>
   <script type="text/javascript">
@@ -171,11 +232,137 @@
     /* initialize firebase */
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+    /* modals login page */
+    // $("#modalLogin").modal({modal: "show", backdrop: "static"});
     /* jQuery */
     $(document).ready(function() {
       setInterval(function() {
         //location.reload();
       }, 5000);
+    });
+
+    $('#login').click(function() {
+      $("#modalLogin").modal("hide");
+      $("#modalLoading").modal({modal: "show", backdrop: "static"});
+      firebase.auth().signInWithEmailAndPassword(
+        $('#username').val(),
+        $('#password').val()
+      )
+      .then(function(result) {
+        $("#modalLoading").modal("hide");
+      })
+      .catch(function(error) {
+        $("#logLoading").html('<span><b>Mohon maaf, username atau password yang anda masukkan salah</b></span>')
+        setTimeout(function() {
+          location.reload();
+        }, 3000);
+      })
+    });
+
+    $(document).ready(function() {
+
+      var link, startGetData = false;
+      var startThead = false, getDataThead;
+      var startTbody = false, getDataTbody = [];
+
+      $("#angketkepuasanmahasiswaterhadappelayananakademik").click(function() {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+        $("#header-dropdown").html($(this).html());
+        link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-akademik";
+      });
+      $("#angketkepuasanmahasiswaterhadappelayananperpustakaan").click(function() {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+        $("#header-dropdown").html($(this).html());
+        link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-perpustakaan";
+      });
+      $("#angketkepuasanpelayanankeuangan").click(function() {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+        $("#header-dropdown").html($(this).html());
+        link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-keuangan";
+      });
+      $("#angketkepuasanpenggunalulusan").click(function() {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+        $("#header-dropdown").html($(this).html());
+        link = "angket-kepuasan-pengguna-lulusan-program-studi-teknik-elektro";
+      });
+      $("#angketkuesionerumpanbalikmitrakerjasama").click(function() {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+        $("#header-dropdown").html($(this).html());
+        link = "angket-kuesioner-umpan-balik-mitra-kerjasama";
+      });
+      $("#formulirbiodatamahasiswa").click(function() {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+        $("#header-dropdown").html($(this).html());
+        link = "formulir-biodata-mahasiswa";
+      });
+      $("#formulirkuesioneralumni").click(function() {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+        $("#header-dropdown").html($(this).html());
+        link = "formulir-kuesioner-alumni";
+      });
+      $("#formulirpendaftaranmahasiswabaru").click(function() {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+        $("#header-dropdown").html($(this).html());
+        link = "formulir-pendaftaran-mahasiswa-baru";
+      });
+
+      firebase.auth().signInWithEmailAndPassword(
+        "teknikelektro@unibabwi.ac.id", "ardiganteng07"
+      );
+
+      setInterval(function() {
+        if (startGetData) {
+          $("#not-found").removeClass("hidden").addClass("show");
+          $("#table-data").removeClass("show").addClass("hidden");
+          getDataThead = 0; getDataTbody = [];
+          firebase.database().ref().child(link + '/question').once('value', function(snapshot) {
+            getDataThead = snapshot.val();
+            startThead = true;
+          });
+          firebase.database().ref().child(link + '/data').once('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+              getDataTbody.push(childSnapshot.val());
+              startTbody = true;
+            })
+          });
+        }
+        startGetData = false;
+      });
+
+      setInterval(function() {
+        if (startThead) {
+          $("#thead").append('<th>No.</th>');
+          for (var i = 0; i <= 3; i++) {$("#thead").append('<th>' + getDataThead["QA" + i] + '</th>');}
+          startThead = false;
+        }
+        if (startTbody) {
+          $("#not-found").removeClass("show").addClass("hidden");
+          $("#table-data").removeClass("hidden").addClass("show");
+          for (var i = 0; getDataTbody[i] != undefined; i++) {
+            var tdElement = "";
+            tdElement = tdElement + '<td>' + (i + 1) + '</td>';
+            for (var j = 0; j <= 3; j++) {tdElement = tdElement + '<td>' + getDataTbody[i]["QA" + j] + '</td>';}
+            $("#tbody").append('<tr>' + tdElement + '</tr>');
+          }
+          startTbody = false;
+        }
+      });
     });
   </script>
 </body>
