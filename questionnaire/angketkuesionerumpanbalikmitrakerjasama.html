@@ -395,11 +395,11 @@
             if (!$("#QA0" + i).val().length || !$("#agree").is(':checked')) {
               sending = false;
               break;
-            } else {
-              if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
-                sending = false;
-                break;
-              }
+            }
+          } else {
+            if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
+              sending = false;
+              break;
             }
           }
         }
