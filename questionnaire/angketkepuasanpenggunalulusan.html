@@ -78,15 +78,15 @@
     <div class="card shadow-sm border border-dark">
       <div class="card-body">
         <label class="text-justify my-0">Nama Instansi</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA1">
+        <input class="form-control shadow-none mb-2" type="text" id="QA01">
         <label class="text-justify my-0">Alamat Instansi</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA2">
+        <input class="form-control shadow-none mb-2" type="text" id="QA02">
         <label class="text-justify my-0">Nama Lengkap Responden Dan Gelar</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA3">
+        <input class="form-control shadow-none mb-2" type="text" id="QA03">
         <label class="text-justify my-0">Jabatan</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA4">
+        <input class="form-control shadow-none mb-2" type="text" id="QA04">
         <label class="text-justify my-0">Jumlah Lulusan Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi di Instansi Anda</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA5">
+        <input class="form-control shadow-none mb-2" type="text" id="QA05">
       </div>
     </div>
   </div>
@@ -101,28 +101,28 @@
         </p>
         <hr>
         <label class="text-justify my-0">Kepemimpinan</label>
-        <select class="custom-select shadow-none mb-2" id="QA6">
+        <select class="custom-select shadow-none mb-2" id="QA06">
           <option value="Sangat Baik">Sangat Baik</option>
           <option value="Baik">Baik</option>
           <option value="Cukup">Cukup</option>
           <option value="Kurang">Kurang</option>
         </select>
         <label class="text-justify my-0">Integritas (etika dan moral)</label>
-        <select class="custom-select shadow-none mb-2" id="QA7">
+        <select class="custom-select shadow-none mb-2" id="QA07">
           <option value="Sangat Baik">Sangat Baik</option>
           <option value="Baik">Baik</option>
           <option value="Cukup">Cukup</option>
           <option value="Kurang">Kurang</option>
         </select>
         <label class="text-justify my-0">Keahlian di bidang ilmu (profesionalisme)</label>
-        <select class="custom-select shadow-none mb-2" id="QA8">
+        <select class="custom-select shadow-none mb-2" id="QA08">
           <option value="Sangat Baik">Sangat Baik</option>
           <option value="Baik">Baik</option>
           <option value="Cukup">Cukup</option>
           <option value="Kurang">Kurang</option>
         </select>
         <label class="text-justify my-0">Keluasan wawasan antar disiplin ilmu</label>
-        <select class="custom-select shadow-none mb-2" id="QA9">
+        <select class="custom-select shadow-none mb-2" id="QA09">
           <option value="Sangat Baik">Sangat Baik</option>
           <option value="Baik">Baik</option>
           <option value="Cukup">Cukup</option>
@@ -310,7 +310,7 @@
     </div>
   </div>
 
-  <div style="display: none;"><input style="display: none;" id="QA0" type="text" disabled></div>
+  <div style="display: none;"><input style="display: none;" id="QA00" type="text" disabled></div>
   <script src="../bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="../bower_components/popper/dist/umd/popper.js" charset="utf-8"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
@@ -330,7 +330,7 @@
     var vMonth = vDay.getMonth();
     var vYears = vDay.getFullYear();
     date = day[vNameDay] + ", " +vDate + " " + month[vMonth] + " " + vYears;
-    $("#QA0").val(date);
+    $("#QA00").val(date);
 
     /* secret database */
     var firebaseConfig = {
@@ -354,9 +354,16 @@
       $("#save").click(function() {
         var sending = true, QA = 18;
         for (var i = 1; i <= QA; i ++) {
-          if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
-            sending = false;
-            break;
+          if (i < 10) {
+            if (!$("#QA0" + i).val().length || !$("#agree").is(':checked')) {
+              sending = false;
+              break;
+            }
+          } else {
+            if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
+              sending = false;
+              break;
+            }
           }
         }
         if (!sending) {
@@ -364,16 +371,16 @@
         } else {
           $("#modalSaveDataElement").modal({modal: "show", backdrop: "static"});
           var dataQuestion = {
-            QA0: "Tanggal",
-            QA1: "Nama Instansi",
-            QA2: "Alamat Instansi",
-            QA3: "Nama Lengkap Responden Dan Gelar",
-            QA4: "Jabatan",
-            QA5: "Jumlah Lulusan Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi di Instansi Anda",
-            QA6: "Kepemimpinan",
-            QA7: "Integritas (etika dan moral)",
-            QA8: "Keahlian di bidang ilmu (profesionalisme)",
-            QA9: "Keluasan wawasan antar disiplin ilmu",
+            QA00: "Tanggal",
+            QA01: "Nama Instansi",
+            QA02: "Alamat Instansi",
+            QA03: "Nama Lengkap Responden Dan Gelar",
+            QA04: "Jabatan",
+            QA05: "Jumlah Lulusan Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi di Instansi Anda",
+            QA06: "Kepemimpinan",
+            QA07: "Integritas (etika dan moral)",
+            QA08: "Keahlian di bidang ilmu (profesionalisme)",
+            QA09: "Keluasan wawasan antar disiplin ilmu",
             QA10: "Kerjasama dalam tim",
             QA11: "Penguasaan bahasa asing",
             QA12: "Komunikasi (lisan dan tulis)",

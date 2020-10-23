@@ -66,21 +66,21 @@
     <div class="card shadow-sm border border-dark">
       <div class="card-body">
         <label class="text-justify my-0">Email</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA1">
+        <input class="form-control shadow-none mb-2" type="text" id="QA01">
         <label class="text-justify my-0">Nama Lengkap</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA2">
+        <input class="form-control shadow-none mb-2" type="text" id="QA02">
         <label class="text-justify my-0">Jenis Kelamin</label>
-        <select class="custom-select shadow-none mb-2" id="QA3">
+        <select class="custom-select shadow-none mb-2" id="QA03">
           <option value="Laki - Laki">Laki - Laki</option>
           <option value="Perempuan">Perempuan</option>
         </select>
         <label class="text-justify my-0">Tempat dan Tanggal Lahir</label>
         <div class="row">
           <div class="col-sm-12">
-            <input class="form-control shadow-none mb-2" type="text" id="QA4" placeholder="Tempat Lahir">
+            <input class="form-control shadow-none mb-2" type="text" id="QA04" placeholder="Tempat Lahir">
           </div>
           <div class="col-sm-4">
-            <select class="custom-select shadow-none mb-2" id="QA5">
+            <select class="custom-select shadow-none mb-2" id="QA05">
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -115,7 +115,7 @@
             </select>
           </div>
           <div class="col-sm-4">
-            <select class="custom-select shadow-none mb-2" id="QA6">
+            <select class="custom-select shadow-none mb-2" id="QA06">
               <option value="Januari">Januari</option>
               <option value="Februari">Februari</option>
               <option value="Maret">Maret</option>
@@ -131,7 +131,7 @@
             </select>
           </div>
           <div class="col-sm-4">
-            <select class="custom-select shadow-none mb-2" id="QA7">
+            <select class="custom-select shadow-none mb-2" id="QA07">
               <option value="1970">1970</option>
               <option value="1971">1971</option>
               <option value="1972">1972</option>
@@ -189,10 +189,10 @@
         <label class="text-justify my-0">Alamat Rumah</label>
         <div class="row">
           <div class="col-sm-6">
-            <input class="form-control shadow-none mb-2" type="text" id="QA8" placeholder="RT">
+            <input class="form-control shadow-none mb-2" type="text" id="QA08" placeholder="RT">
           </div>
           <div class="col-sm-6">
-            <input class="form-control shadow-none mb-2" type="text" id="QA9" placeholder="RW">
+            <input class="form-control shadow-none mb-2" type="text" id="QA09" placeholder="RW">
           </div>
         </div>
         <div class="row">
@@ -628,7 +628,7 @@
     </div>
   </div>
 
-  <div style="display: none;"><input style="display: none;" id="QA0" type="text" disabled></div>
+  <div style="display: none;"><input style="display: none;" id="QA00" type="text" disabled></div>
   <script src="../bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="../bower_components/popper/dist/umd/popper.js" charset="utf-8"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
@@ -648,7 +648,7 @@
     var vMonth = vDay.getMonth();
     var vYears = vDay.getFullYear();
     date = day[vNameDay] + ", " +vDate + " " + month[vMonth] + " " + vYears;
-    $("#QA0").val(date);
+    $("#QA00").val(date);
 
     /* secret database */
     var firebaseConfig = {
@@ -672,9 +672,16 @@
       $("#save").click(function() {
         var sending = true, QA = 41;
         for (var i = 1; i <= QA; i ++) {
-          if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
-            sending = false;
-            break;
+          if (i < 10) {
+            if (!$("#QA0" + i).val().length || !$("#agree").is(':checked')) {
+              sending = false;
+              break;
+            }
+          } else {
+            if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
+              sending = false;
+              break;
+            }
           }
         }
         if (!sending) {
@@ -682,16 +689,16 @@
         } else {
           $("#modalSaveDataElement").modal({modal: "show", backdrop: "static"});
           var dataQuestion = {
-            QA0: "Tanggal",
-            QA1: "Email",
-            QA2: "Nama Lengkap",
-            QA3: "Jenis Kelamin",
-            QA4: "Tempat Lahir",
-            QA5: "Tanggal Lahir",
-            QA6: "Bulan Lahir",
-            QA7: "Tahun Lahir",
-            QA8: "RT",
-            QA9: "RW",
+            QA00: "Tanggal",
+            QA01: "Email",
+            QA02: "Nama Lengkap",
+            QA03: "Jenis Kelamin",
+            QA04: "Tempat Lahir",
+            QA05: "Tanggal Lahir",
+            QA06: "Bulan Lahir",
+            QA07: "Tahun Lahir",
+            QA08: "RT",
+            QA09: "RW",
             QA10: "Dusun",
             QA11: "Desa",
             QA12: "Kecamatan",
