@@ -26,7 +26,7 @@
   <title>Admin</title>
   <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../asset/style/custom-bootstrap.css">
+  <link rel="stylesheet" href="../asset/style/custom-bootstrap-admin.css">
 </head>
 <body class="bg-light">
 
@@ -97,7 +97,7 @@
   </div>
 
   <div class="container mb-4">
-    <h5 class="font-weight-bolder underline-prepend" id="header-dropdown">Angket Kepuasan Mahasiswa Terhadap Pelayanan Akademik</h5>
+    <h5 class="font-weight-bolder underline-prepend" id="header-dropdown">Belum Ada Data Dipilih</h5>
     <hr class="underline">
     <div class="mb-3"></div>
     <div id="not-found" class="show">
@@ -218,52 +218,52 @@
   <script src="../bower_components/firebase/firebase-database.js" charset="utf-8"></script>
   <script src="../bower_components/firebase/firebase-analytics.js" charset="utf-8"></script>
   <script type="text/javascript">
-    /* secret database */
-    var firebaseConfig = {
-      apiKey: "AIzaSyDjhd5f9Iu2B49nocF_Fpm1qlz5ShdyRRs",
-      authDomain: "databaseteknikelektro.firebaseapp.com",
-      databaseURL: "https://databaseteknikelektro.firebaseio.com",
-      projectId: "databaseteknikelektro",
-      storageBucket: "databaseteknikelektro.appspot.com",
-      messagingSenderId: "511683152914",
-      appId: "1:511683152914:web:4d317cf5e0bb5a40ee1ccb",
-      measurementId: "G-95NP9ZB5DH"
-    };
-    /* initialize firebase */
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    /* modals login page */
-    // $("#modalLogin").modal({modal: "show", backdrop: "static"});
-    /* jQuery */
-    $(document).ready(function() {
-      setInterval(function() {
-        //location.reload();
-      }, 5000);
-    });
-
-    $('#login').click(function() {
-      $("#modalLogin").modal("hide");
-      $("#modalLoading").modal({modal: "show", backdrop: "static"});
-      firebase.auth().signInWithEmailAndPassword(
-        $('#username').val(),
-        $('#password').val()
-      )
-      .then(function(result) {
-        $("#modalLoading").modal("hide");
-      })
-      .catch(function(error) {
-        $("#logLoading").html('<span><b>Mohon maaf, username atau password yang anda masukkan salah</b></span>')
-        setTimeout(function() {
-          location.reload();
-        }, 3000);
-      })
-    });
-
-    $(document).ready(function() {
+  $(document).ready(function() {
 
       var link, startGetData = false;
       var startThead = false, getDataThead;
       var startTbody = false, getDataTbody = [];
+
+      /* secret database */
+      var firebaseConfig = {
+        apiKey: "AIzaSyDjhd5f9Iu2B49nocF_Fpm1qlz5ShdyRRs",
+        authDomain: "databaseteknikelektro.firebaseapp.com",
+        databaseURL: "https://databaseteknikelektro.firebaseio.com",
+        projectId: "databaseteknikelektro",
+        storageBucket: "databaseteknikelektro.appspot.com",
+        messagingSenderId: "511683152914",
+        appId: "1:511683152914:web:4d317cf5e0bb5a40ee1ccb",
+        measurementId: "G-95NP9ZB5DH"
+      };
+      /* initialize firebase */
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      /* modals login page */
+      $("#modalLogin").modal({modal: "show", backdrop: "static"});
+      /* jQuery */
+      $(document).ready(function() {
+        setInterval(function() {
+          //location.reload();
+        }, 5000);
+      });
+
+      $('#login').click(function() {
+        $("#modalLogin").modal("hide");
+        $("#modalLoading").modal({modal: "show", backdrop: "static"});
+        firebase.auth().signInWithEmailAndPassword(
+          $('#username').val(),
+          $('#password').val()
+        )
+        .then(function(result) {
+          $("#modalLoading").modal("hide");
+        })
+        .catch(function(error) {
+          $("#logLoading").html('<span><b>Mohon maaf, username atau password yang anda masukkan salah</b></span>')
+          setTimeout(function() {
+            location.reload();
+          }, 3000);
+        })
+      });
 
       $("#angketkepuasanmahasiswaterhadappelayananakademik").click(function() {
         $("#thead").html("");
@@ -322,12 +322,9 @@
         link = "formulir-pendaftaran-mahasiswa-baru";
       });
 
-      firebase.auth().signInWithEmailAndPassword(
-        "teknikelektro@unibabwi.ac.id", "ardiganteng07"
-      );
-
       setInterval(function() {
         if (startGetData) {
+          $("#modalLoading").modal({modal: "show", backdrop: "static"});
           $("#not-found").removeClass("hidden").addClass("show");
           $("#table-data").removeClass("show").addClass("hidden");
           getDataThead = 0; getDataTbody = [];
@@ -343,12 +340,13 @@
           });
         }
         startGetData = false;
-      });
 
-      setInterval(function() {
         if (startThead) {
           $("#thead").append('<th>No.</th>');
           for (var i = 0; i <= 3; i++) {$("#thead").append('<th>' + getDataThead["QA" + i] + '</th>');}
+          setTimeout(function() {
+            $("#modalLoading").modal("hide");
+          }, 1000);
           startThead = false;
         }
         if (startTbody) {
