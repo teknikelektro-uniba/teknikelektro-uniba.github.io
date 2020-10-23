@@ -78,17 +78,17 @@
     <div class="card shadow-sm border border-dark">
       <div class="card-body">
         <label class="text-justify my-0">Nama Instansi</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA1">
+        <input class="form-control shadow-none mb-2" type="text" id="QA01">
         <label class="text-justify my-0">Alamat Instansi</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA2">
+        <input class="form-control shadow-none mb-2" type="text" id="QA02">
         <label class="text-justify my-0">Nama Lengkap Responden Dan Gelar</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA3">
+        <input class="form-control shadow-none mb-2" type="text" id="QA03">
         <label class="text-justify my-0">Email</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA4">
+        <input class="form-control shadow-none mb-2" type="text" id="QA04">
         <label class="text-justify my-0">Nomor Telepon</label>
-        <input class="form-control shadow-none mb-2" type="text" id="QA5">
+        <input class="form-control shadow-none mb-2" type="text" id="QA05">
         <label class="text-justify my-0">Dalam bidang apa anda terlibat kerjasama dengan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi ?</label>
-        <select class="custom-select shadow-none mb-2" id="QA6">
+        <select class="custom-select shadow-none mb-2" id="QA06">
           <option value="Pendidikan (Pelatihan, Magang, dll)">Pendidikan (Pelatihan, Magang, dll)</option>
           <option value="Pengabdian pda Masyarakat">Pengabdian pda Masyarakat</option>
           <option value="Penelitian">Penelitian</option>
@@ -103,7 +103,7 @@
     <div class="card shadow-sm border border-dark">
       <div class="card-body">
         <label class="text-justify my-0">Staff dan tenaga kependidikan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi  tanggap dalam merespon  pada kebutuhan kami dengan tepat dan profesional</label>
-        <select class="custom-select shadow-none mb-2" id="QA7">
+        <select class="custom-select shadow-none mb-2" id="QA07">
           <option value="Sesuai Harapan">Sesuai Harapan</option>
           <option value="5">5</option>
           <option value="4">4</option>
@@ -113,7 +113,7 @@
           <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
         </select>
         <label class="text-justify my-0">Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi memberikan pendampingan/bantuan terhadap instansi kami saat dibutuhkan</label>
-        <select class="custom-select shadow-none mb-2" id="QA8">
+        <select class="custom-select shadow-none mb-2" id="QA08">
           <option value="Sesuai Harapan">Sesuai Harapan</option>
           <option value="5">5</option>
           <option value="4">4</option>
@@ -123,7 +123,7 @@
           <option value="Tidak Sesuai Harapan">Tidak Sesuai Harapan</option>
         </select>
         <label class="text-justify my-0">Kerjasama/kegiatan ini sesuai dengan harapan kami</label>
-        <select class="custom-select shadow-none mb-2" id="QA9">
+        <select class="custom-select shadow-none mb-2" id="QA09">
           <option value="Sesuai Harapan">Sesuai Harapan</option>
           <option value="5">5</option>
           <option value="4">4</option>
@@ -347,7 +347,7 @@
     </div>
   </div>
 
-  <div style="display: none;"><input style="display: none;" id="QA0" type="text" disabled></div>
+  <div style="display: none;"><input style="display: none;" id="QA00" type="text" disabled></div>
   <script src="../bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
   <script src="../bower_components/popper/dist/umd/popper.js" charset="utf-8"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
@@ -367,7 +367,7 @@
     var vMonth = vDay.getMonth();
     var vYears = vDay.getFullYear();
     date = day[vNameDay] + ", " +vDate + " " + month[vMonth] + " " + vYears;
-    $("#QA0").val(date);
+    $("#QA00").val(date);
 
     /* secret database */
     var firebaseConfig = {
@@ -391,9 +391,16 @@
       $("#save").click(function() {
         var sending = true, QA = 17;
         for (var i = 1; i <= QA; i ++) {
-          if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
-            sending = false;
-            break;
+          if (i < 10) {
+            if (!$("#QA0" + i).val().length || !$("#agree").is(':checked')) {
+              sending = false;
+              break;
+            } else {
+              if (!$("#QA" + i).val().length || !$("#agree").is(':checked')) {
+                sending = false;
+                break;
+              }
+            }
           }
         }
         if (!sending) {
@@ -401,16 +408,16 @@
         } else {
           $("#modalSaveDataElement").modal({modal: "show", backdrop: "static"});
           var dataQuestion = {
-            QA0: "Tanggal",
-            QA1: "Nama Instansi",
-            QA2: "Alamat Instansi",
-            QA3: "Nama Lengkap Responden Dan Gelar",
-            QA4: "Email",
-            QA5: "Nomor Telepon",
-            QA6: "Dalam bidang apa anda terlibat kerjasama dengan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi ?",
-            QA7: "Staff dan tenaga kependidikan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi tanggap dalam merespon pada kebutuhan kami dengan tepat dan profesional",
-            QA8: "Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi memberikan pendampingan/bantuan terhadap instansi kami saat dibutuhkan",
-            QA9: "Kerjasama/kegiatan ini sesuai dengan harapan kami",
+            QA00: "Tanggal",
+            QA01: "Nama Instansi",
+            QA02: "Alamat Instansi",
+            QA03: "Nama Lengkap Responden Dan Gelar",
+            QA04: "Email",
+            QA05: "Nomor Telepon",
+            QA06: "Dalam bidang apa anda terlibat kerjasama dengan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi ?",
+            QA07: "Staff dan tenaga kependidikan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi tanggap dalam merespon pada kebutuhan kami dengan tepat dan profesional",
+            QA08: "Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi memberikan pendampingan/bantuan terhadap instansi kami saat dibutuhkan",
+            QA09: "Kerjasama/kegiatan ini sesuai dengan harapan kami",
             QA10: "Pelaporan akhir dari hasil kegiatan kerjasama telah di buat dan dikomunikasikan dengan kami",
             QA11: "Kami mendapatkan ilmu yang berguna dari kerjasama antara institusi kami dan Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi",
             QA12: "Kerjasama antara Prodi Teknik Elektro Fakultas Teknik Universitas PGRI Banyuwangi dengan Instansi kami telah kami implementasikan dengan kegiatan yang sesuai dengan MoU yang telah kami sepakati bersama",
