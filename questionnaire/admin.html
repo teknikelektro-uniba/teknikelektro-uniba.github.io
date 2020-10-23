@@ -81,16 +81,10 @@
           </div>
         </div>
         <div class="col-auto p-1">
-          <button class="btn btn-dark border border-light" type="button">Delete</button>
+          <button class="btn btn-dark border border-light" type="button" id="refresh">Refresh</button>
         </div>
         <div class="col-auto p-1">
-          <button class="btn btn-dark border border-light" type="button">Refresh</button>
-        </div>
-        <div class="col-auto p-1">
-          <button class="btn btn-dark border border-light" type="button">Export JSON</button>
-        </div>
-        <div class="col-auto p-1">
-          <button class="btn btn-dark border border-light" type="button">Export CSV</button>
+          <button class="btn btn-dark border border-light" type="button" id="export-csv">Export CSV</button>
         </div>
       </div>
     </div>
@@ -217,8 +211,9 @@
   <script src="../bower_components/firebase/firebase-auth.js" charset="utf-8"></script>
   <script src="../bower_components/firebase/firebase-database.js" charset="utf-8"></script>
   <script src="../bower_components/firebase/firebase-analytics.js" charset="utf-8"></script>
+  <script src="../asset/script/export-csv.js" charset="utf-8"></script>
   <script type="text/javascript">
-  $(document).ready(function() {
+    $(document).ready(function() {
 
       var link, startGetData = false;
       var startThead = false, getDataThead;
@@ -239,7 +234,7 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
       /* modals login page */
-      $("#modalLogin").modal({modal: "show", backdrop: "static"});
+      //$("#modalLogin").modal({modal: "show", backdrop: "static"});
       /* jQuery */
       $(document).ready(function() {
         setInterval(function() {
@@ -256,13 +251,20 @@
         )
         .then(function(result) {
           $("#modalLoading").modal("hide");
+          setTimeout(function() {
+            $("#thead").html("");
+            $("#tbody").html("");
+            startGetData = true;
+            $("#header-dropdown").html("Angket Kepuasan Mahasiswa Terhadap Pelayanan Akademik");
+            link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-akademik";
+          }, 1000);
         })
         .catch(function(error) {
-          $("#logLoading").html('<span><b>Mohon maaf, username atau password yang anda masukkan salah</b></span>')
+          $("#logLoading").html('<span><b>Mohon maaf, username atau password yang anda masukkan salah</b></span>');
           setTimeout(function() {
             location.reload();
           }, 3000);
-        })
+        });
       });
 
       $("#angketkepuasanmahasiswaterhadappelayananakademik").click(function() {
@@ -322,6 +324,14 @@
         link = "formulir-pendaftaran-mahasiswa-baru";
       });
 
+      $("#refresh").click(function() {
+        if ($("#not-found").attr("class") == "hidden") {
+          $("#thead").html("");
+          $("#tbody").html("");
+          startGetData = true;
+        }
+      });
+
       setInterval(function() {
         if (startGetData) {
           $("#modalLoading").modal({modal: "show", backdrop: "static"});
@@ -360,6 +370,61 @@
           }
           startTbody = false;
         }
+      });
+      /*----------------------------------------------------------------------*/
+      $("#export-csv").click(function() {
+        var string = JSON.stringify(getDataThead), str = "";
+        for (var i = 0; i < string.length; i++) {
+          if (string[i] + string[i + 1] == "\",") {
+            str += "~";
+            i ++;
+          } else if (string[i] + string[i + 1] == "},") {
+            str += "^";
+            i ++;
+          } else {
+            str += string[i];
+          }
+        }
+        string = "";
+        for (var i = 0; i < str.length; i++) {
+          if (str[i] == ",") {
+            string += "#";
+          } else if (str[i] == "~") {
+            string += "\",";
+          } else if (str[i] == "^") {
+            string += "},";
+          } else {
+            string += str[i];
+          }
+        }
+        var headerJson = JSON.parse(string);
+        var string = JSON.stringify(getDataTbody), str = "";
+        for (var i = 0; i < string.length; i++) {
+          if (string[i] + string[i + 1] == "\",") {
+            str += "~";
+            i ++;
+          } else if (string[i] + string[i + 1] == "},") {
+            str += "^";
+            i ++;
+          } else {
+            str += string[i];
+          }
+        }
+        string = "";
+        for (var i = 0; i < str.length; i++) {
+          if (str[i] == ",") {
+            string += "#";
+          } else if (str[i] == "~") {
+            string += "\",";
+          } else if (str[i] == "^") {
+            string += "},";
+          } else {
+            string += str[i];
+          }
+        }
+        var dataJson = JSON.parse(string);
+        var titleCsv = $("#header-dropdown").html();
+        exportCSVFile(headerJson, dataJson, titleCsv);
       });
     });
   </script>
