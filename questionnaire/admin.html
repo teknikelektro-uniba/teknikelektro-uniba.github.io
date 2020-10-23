@@ -353,7 +353,7 @@
 
         if (startThead) {
           $("#thead").append('<th>No.</th>');
-          for (var i = 0; i <= 3; i++) {$("#thead").append('<th>' + getDataThead["QA" + i] + '</th>');}
+          for (var i = 0; i <= 3; i++) {$("#thead").append('<th>' + getDataThead["QA0" + i] + '</th>');}
           setTimeout(function() {
             $("#modalLoading").modal("hide");
           }, 1000);
@@ -365,7 +365,7 @@
           for (var i = 0; getDataTbody[i] != undefined; i++) {
             var tdElement = "";
             tdElement = tdElement + '<td>' + (i + 1) + '</td>';
-            for (var j = 0; j <= 3; j++) {tdElement = tdElement + '<td>' + getDataTbody[i]["QA" + j] + '</td>';}
+            for (var j = 0; j <= 3; j++) {tdElement = tdElement + '<td>' + getDataTbody[i]["QA0" + j] + '</td>';}
             $("#tbody").append('<tr>' + tdElement + '</tr>');
           }
           startTbody = false;
