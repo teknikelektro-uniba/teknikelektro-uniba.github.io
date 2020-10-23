@@ -51,15 +51,3 @@ hr.underline-light {
   border-radius: 0 .5rem 0 0;
   background: #fff !important;
 }
-
-.hidden {
-  display: none;
-  visibility: hidden;
-  z-index: 999;
-}
-
-.show {
-  display: block;
-  visibility: visible;
-  z-index: 999;
-}
