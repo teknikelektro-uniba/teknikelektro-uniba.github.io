@@ -108,8 +108,8 @@
   </div>
 
   <!--------------------------------------------------------------------------->
-  <!--[ modal ]---------------------------------------------------------------->
-  <!--[ login panel ]-->
+  <!--[ modals ]--------------------------------------------------------------->
+  <!--[ login modals ]-->
   <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -125,7 +125,7 @@
       </div>
     </div>
   </div>
-  <!--[ loading panel ]-->
+  <!--[ loading modals ]-->
   <div class="modal fade" id="modalLoading" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -140,7 +140,21 @@
       </div>
     </div>
   </div>
-  <!--[ end modal ]------------------------------------------------------------>
+  <!--[ delete modals ]-->
+  <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <span>Lanjutkan ?</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger mr-2" data-dismiss="modal" id="deleteds">Delete</button>
+          <button type="button" class="btn btn-dark mr-0" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[ end modals ]----------------------------------------------------------->
   <!--------------------------------------------------------------------------->
 
   <!--[ ############################# footer ############################## ]-->
@@ -213,219 +227,243 @@
   <script src="../bower_components/firebase/firebase-analytics.js" charset="utf-8"></script>
   <script src="../asset/script/export-csv.js" charset="utf-8"></script>
   <script type="text/javascript">
+    var link, startGetData = false;
+    var startThead = false, getDataThead;
+    var startTbody = false, getDataTbody = [], getDataTbodyKey = [];
+
+    /* secret database */
+    var firebaseConfig = {
+      apiKey: "AIzaSyDjhd5f9Iu2B49nocF_Fpm1qlz5ShdyRRs",
+      authDomain: "databaseteknikelektro.firebaseapp.com",
+      databaseURL: "https://databaseteknikelektro.firebaseio.com",
+      projectId: "databaseteknikelektro",
+      storageBucket: "databaseteknikelektro.appspot.com",
+      messagingSenderId: "511683152914",
+      appId: "1:511683152914:web:4d317cf5e0bb5a40ee1ccb",
+      measurementId: "G-95NP9ZB5DH"
+    };
+    /* initialize firebase */
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    /* modals login page */
+    $("#modalLogin").modal({modal: "show", backdrop: "static"});
+    /* jQuery */
     $(document).ready(function() {
+      setInterval(function() {
+        //location.reload();
+      }, 5000);
+    });
 
-      var link, startGetData = false;
-      var startThead = false, getDataThead;
-      var startTbody = false, getDataTbody = [];
-
-      /* secret database */
-      var firebaseConfig = {
-        apiKey: "AIzaSyDjhd5f9Iu2B49nocF_Fpm1qlz5ShdyRRs",
-        authDomain: "databaseteknikelektro.firebaseapp.com",
-        databaseURL: "https://databaseteknikelektro.firebaseio.com",
-        projectId: "databaseteknikelektro",
-        storageBucket: "databaseteknikelektro.appspot.com",
-        messagingSenderId: "511683152914",
-        appId: "1:511683152914:web:4d317cf5e0bb5a40ee1ccb",
-        measurementId: "G-95NP9ZB5DH"
-      };
-      /* initialize firebase */
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-      /* modals login page */
-      $("#modalLogin").modal({modal: "show", backdrop: "static"});
-      /* jQuery */
-      $(document).ready(function() {
-        setInterval(function() {
-          //location.reload();
-        }, 5000);
-      });
-
-      $('#login').click(function() {
-        $("#modalLogin").modal("hide");
-        $("#modalLoading").modal({modal: "show", backdrop: "static"});
-        firebase.auth().signInWithEmailAndPassword(
-          $('#username').val(),
-          $('#password').val()
-        )
-        .then(function(result) {
-          $("#modalLoading").modal("hide");
-          setTimeout(function() {
-            $("#thead").html("");
-            $("#tbody").html("");
-            startGetData = true;
-            $("#header-dropdown").html("Angket Kepuasan Mahasiswa Terhadap Pelayanan Akademik");
-            link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-akademik";
-          }, 1000);
-        })
-        .catch(function(error) {
-          $("#logLoading").html('<span><b>Mohon maaf, username atau password yang anda masukkan salah</b></span>');
-          setTimeout(function() {
-            location.reload();
-          }, 3000);
-        });
-      });
-
-      $("#angketkepuasanmahasiswaterhadappelayananakademik").click(function() {
-        $("#thead").html("");
-        $("#tbody").html("");
-        startGetData = true;
-        $("#header-dropdown").html($(this).html());
-        link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-akademik";
-      });
-      $("#angketkepuasanmahasiswaterhadappelayananperpustakaan").click(function() {
-        $("#thead").html("");
-        $("#tbody").html("");
-        startGetData = true;
-        $("#header-dropdown").html($(this).html());
-        link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-perpustakaan";
-      });
-      $("#angketkepuasanpelayanankeuangan").click(function() {
-        $("#thead").html("");
-        $("#tbody").html("");
-        startGetData = true;
-        $("#header-dropdown").html($(this).html());
-        link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-keuangan";
-      });
-      $("#angketkepuasanpenggunalulusan").click(function() {
-        $("#thead").html("");
-        $("#tbody").html("");
-        startGetData = true;
-        $("#header-dropdown").html($(this).html());
-        link = "angket-kepuasan-pengguna-lulusan-program-studi-teknik-elektro";
-      });
-      $("#angketkuesionerumpanbalikmitrakerjasama").click(function() {
-        $("#thead").html("");
-        $("#tbody").html("");
-        startGetData = true;
-        $("#header-dropdown").html($(this).html());
-        link = "angket-kuesioner-umpan-balik-mitra-kerjasama";
-      });
-      $("#formulirbiodatamahasiswa").click(function() {
-        $("#thead").html("");
-        $("#tbody").html("");
-        startGetData = true;
-        $("#header-dropdown").html($(this).html());
-        link = "formulir-biodata-mahasiswa";
-      });
-      $("#formulirkuesioneralumni").click(function() {
-        $("#thead").html("");
-        $("#tbody").html("");
-        startGetData = true;
-        $("#header-dropdown").html($(this).html());
-        link = "formulir-kuesioner-alumni";
-      });
-      $("#formulirpendaftaranmahasiswabaru").click(function() {
-        $("#thead").html("");
-        $("#tbody").html("");
-        startGetData = true;
-        $("#header-dropdown").html($(this).html());
-        link = "formulir-pendaftaran-mahasiswa-baru";
-      });
-
-      $("#refresh").click(function() {
-        if ($("#not-found").attr("class") == "hidden") {
+    $('#login').click(function() {
+      $("#modalLogin").modal("hide");
+      $("#modalLoading").modal({modal: "show", backdrop: "static"});
+      firebase.auth().signInWithEmailAndPassword(
+        $('#username').val(),
+        $('#password').val()
+      )
+      .then(function(result) {
+        $("#modalLoading").modal("hide");
+        setTimeout(function() {
           $("#thead").html("");
           $("#tbody").html("");
           startGetData = true;
-        }
+          $("#header-dropdown").html("Angket Kepuasan Mahasiswa Terhadap Pelayanan Akademik");
+          link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-akademik";
+        }, 1000);
+      })
+      .catch(function(error) {
+        $("#logLoading").html('<span><b>Mohon maaf, username atau password yang anda masukkan salah</b></span>');
+        setTimeout(function() {
+          location.reload();
+        }, 3000);
       });
+    });
 
-      setInterval(function() {
-        if (startGetData) {
-          $("#modalLoading").modal({modal: "show", backdrop: "static"});
-          $("#not-found").removeClass("hidden").addClass("show");
-          $("#table-data").removeClass("show").addClass("hidden");
-          getDataThead = 0; getDataTbody = [];
-          firebase.database().ref().child(link + '/question').once('value', function(snapshot) {
-            getDataThead = snapshot.val();
-            startThead = true;
-          });
-          firebase.database().ref().child(link + '/data').once('value', function(snapshot) {
-            snapshot.forEach(function(childSnapshot) {
-              getDataTbody.push(childSnapshot.val());
-              startTbody = true;
-            })
-          });
-        }
-        startGetData = false;
+    $("#angketkepuasanmahasiswaterhadappelayananakademik").click(function() {
+      $("#thead").html("");
+      $("#tbody").html("");
+      startGetData = true;
+      $("#header-dropdown").html($(this).html());
+      link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-akademik";
+    });
+    $("#angketkepuasanmahasiswaterhadappelayananperpustakaan").click(function() {
+      $("#thead").html("");
+      $("#tbody").html("");
+      startGetData = true;
+      $("#header-dropdown").html($(this).html());
+      link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-perpustakaan";
+    });
+    $("#angketkepuasanpelayanankeuangan").click(function() {
+      $("#thead").html("");
+      $("#tbody").html("");
+      startGetData = true;
+      $("#header-dropdown").html($(this).html());
+      link = "angket-kepuasan-mahasiswa-terhadap-pelayanan-keuangan";
+    });
+    $("#angketkepuasanpenggunalulusan").click(function() {
+      $("#thead").html("");
+      $("#tbody").html("");
+      startGetData = true;
+      $("#header-dropdown").html($(this).html());
+      link = "angket-kepuasan-pengguna-lulusan-program-studi-teknik-elektro";
+    });
+    $("#angketkuesionerumpanbalikmitrakerjasama").click(function() {
+      $("#thead").html("");
+      $("#tbody").html("");
+      startGetData = true;
+      $("#header-dropdown").html($(this).html());
+      link = "angket-kuesioner-umpan-balik-mitra-kerjasama";
+    });
+    $("#formulirbiodatamahasiswa").click(function() {
+      $("#thead").html("");
+      $("#tbody").html("");
+      startGetData = true;
+      $("#header-dropdown").html($(this).html());
+      link = "formulir-biodata-mahasiswa";
+    });
+    $("#formulirkuesioneralumni").click(function() {
+      $("#thead").html("");
+      $("#tbody").html("");
+      startGetData = true;
+      $("#header-dropdown").html($(this).html());
+      link = "formulir-kuesioner-alumni";
+    });
+    $("#formulirpendaftaranmahasiswabaru").click(function() {
+      $("#thead").html("");
+      $("#tbody").html("");
+      startGetData = true;
+      $("#header-dropdown").html($(this).html());
+      link = "formulir-pendaftaran-mahasiswa-baru";
+    });
 
-        if (startThead) {
-          $("#thead").append('<th>No.</th>');
-          for (var i = 0; i <= 3; i++) {$("#thead").append('<th>' + getDataThead["QA0" + i] + '</th>');}
-          setTimeout(function() {
-            $("#modalLoading").modal("hide");
-          }, 1000);
-          startThead = false;
+    $("#refresh").click(function() {
+      if ($("#not-found").attr("class") == "hidden") {
+        $("#thead").html("");
+        $("#tbody").html("");
+        startGetData = true;
+      }
+    });
+
+    setInterval(function() {
+      if (startGetData) {
+        $("#modalLoading").modal({modal: "show", backdrop: "static"});
+        $("#not-found").removeClass("hidden").addClass("show");
+        $("#table-data").removeClass("show").addClass("hidden");
+        getDataThead = 0; getDataTbody = [];
+        firebase.database().ref().child(link + '/question').once('value', function(snapshot) {
+          getDataThead = snapshot.val();
+          startThead = true;
+        });
+        firebase.database().ref().child(link + '/data').once('value', function(snapshot) {
+          snapshot.forEach(function(childSnapshot) {
+            getDataTbody.push(childSnapshot.val());
+            getDataTbodyKey.push(childSnapshot.key);
+            startTbody = true;
+          })
+        });
+      }
+      startGetData = false;
+
+      if (startThead) {
+        for (var i = 0; i <= 3; i++) {$("#thead").append('<th>' + getDataThead["QA0" + i] + '</th>');}
+        $("#thead").append('<th>Action</th>');
+        setTimeout(function() {
+          $("#modalLoading").modal("hide");
+        }, 1000);
+        startThead = false;
+      }
+      if (startTbody) {
+        $("#not-found").removeClass("show").addClass("hidden");
+        $("#table-data").removeClass("hidden").addClass("show");
+        for (var i = 0; getDataTbody[i] != undefined; i++) {
+          var tdElement = "";
+          for (var j = 0; j <= 3; j++) {tdElement = tdElement + '<td>' + getDataTbody[i]["QA0" + j] + '</td>';}
+          $("#tbody").append('<tr id="' + getDataTbodyKey[i] + '">' + tdElement + '<td>' + '<a class="nav-link p-0 btn text-danger" onclick="deleteData(\'' + getDataTbodyKey[i] + '\',\'' + link + '\')"><i class="fa fa-trash-o" aria-hidden="true"></i></a>' + '</td>' + '</tr>');
         }
-        if (startTbody) {
-          $("#not-found").removeClass("show").addClass("hidden");
-          $("#table-data").removeClass("hidden").addClass("show");
-          for (var i = 0; getDataTbody[i] != undefined; i++) {
-            var tdElement = "";
-            tdElement = tdElement + '<td>' + (i + 1) + '</td>';
-            for (var j = 0; j <= 3; j++) {tdElement = tdElement + '<td>' + getDataTbody[i]["QA0" + j] + '</td>';}
-            $("#tbody").append('<tr>' + tdElement + '</tr>');
+        startTbody = false;
+      }
+    });
+    /*----------------------------------------------------------------------*/
+    $("#export-csv").click(function() {
+      var string = JSON.stringify(getDataThead), str = "";
+      for (var i = 0; i < string.length; i++) {
+        if (string[i] + string[i + 1] == "\",") {
+          str += "~";
+          i ++;
+        } else if (string[i] + string[i + 1] == "},") {
+          str += "^";
+          i ++;
+        } else {
+          str += string[i];
+        }
+      }
+      string = "";
+      for (var i = 0; i < str.length; i++) {
+        if (str[i] == ",") {
+          string += "#";
+        } else if (str[i] == "~") {
+          string += "\",";
+        } else if (str[i] == "^") {
+          string += "},";
+        } else {
+          string += str[i];
+        }
+      }
+      var headerJson = JSON.parse(string);
+      var string = JSON.stringify(getDataTbody), str = "";
+      for (var i = 0; i < string.length; i++) {
+        if (string[i] + string[i + 1] == "\",") {
+          str += "~";
+          i ++;
+        } else if (string[i] + string[i + 1] == "},") {
+          str += "^";
+          i ++;
+        } else {
+          str += string[i];
+        }
+      }
+      string = "";
+      for (var i = 0; i < str.length; i++) {
+        if (str[i] == ",") {
+          string += "#";
+        } else if (str[i] == "~") {
+          string += "\",";
+        } else if (str[i] == "^") {
+          string += "},";
+        } else {
+          string += str[i];
+        }
+      }
+      var dataJson = JSON.parse(string);
+      var titleCsv = $("#header-dropdown").html();
+      exportCSVFile(headerJson, dataJson, titleCsv);
+    });
+
+    var deleted = false, ids = "", links = "";
+    function deleteData(id, link) {
+      ids = id;
+      links = link;
+      $("#modalDelete").modal("show");
+    }
+
+    $("#deleteds").click(function() {
+      deleted = true;
+    });
+
+    setInterval(function() {
+      if (deleted) {
+        $("#modalLoading").modal({modal: "show", backdrop: "static"});
+        firebase.database().ref(links + "/data/" + ids)
+        .set(null, function(error) {
+          if (!error) {
+            $("#" + ids).html("");
+            setTimeout(function() {
+              $("#modalLoading").modal("hide");
+            }, 1500);
           }
-          startTbody = false;
-        }
-      });
-      /*----------------------------------------------------------------------*/
-      $("#export-csv").click(function() {
-        var string = JSON.stringify(getDataThead), str = "";
-        for (var i = 0; i < string.length; i++) {
-          if (string[i] + string[i + 1] == "\",") {
-            str += "~";
-            i ++;
-          } else if (string[i] + string[i + 1] == "},") {
-            str += "^";
-            i ++;
-          } else {
-            str += string[i];
-          }
-        }
-        string = "";
-        for (var i = 0; i < str.length; i++) {
-          if (str[i] == ",") {
-            string += "#";
-          } else if (str[i] == "~") {
-            string += "\",";
-          } else if (str[i] == "^") {
-            string += "},";
-          } else {
-            string += str[i];
-          }
-        }
-        var headerJson = JSON.parse(string);
-        var string = JSON.stringify(getDataTbody), str = "";
-        for (var i = 0; i < string.length; i++) {
-          if (string[i] + string[i + 1] == "\",") {
-            str += "~";
-            i ++;
-          } else if (string[i] + string[i + 1] == "},") {
-            str += "^";
-            i ++;
-          } else {
-            str += string[i];
-          }
-        }
-        string = "";
-        for (var i = 0; i < str.length; i++) {
-          if (str[i] == ",") {
-            string += "#";
-          } else if (str[i] == "~") {
-            string += "\",";
-          } else if (str[i] == "^") {
-            string += "},";
-          } else {
-            string += str[i];
-          }
-        }
-        var dataJson = JSON.parse(string);
-        var titleCsv = $("#header-dropdown").html();
-        exportCSVFile(headerJson, dataJson, titleCsv);
-      });
+        });
+        deleted = false;
+      }
     });
   </script>
 </body>
