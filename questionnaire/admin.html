@@ -366,7 +366,6 @@
 
       if (startThead) {
         for (var i = 0; i <= 3; i++) {$("#thead").append('<th>' + getDataThead["QA0" + i] + '</th>');}
-        $("#thead").append('<th>Action</th>');
         setTimeout(function() {
           $("#modalLoading").modal("hide");
         }, 1000);
@@ -378,7 +377,7 @@
         for (var i = 0; getDataTbody[i] != undefined; i++) {
           var tdElement = "";
           for (var j = 0; j <= 3; j++) {tdElement = tdElement + '<td>' + getDataTbody[i]["QA0" + j] + '</td>';}
-          $("#tbody").append('<tr id="' + getDataTbodyKey[i] + '">' + tdElement + '<td>' + '<a class="nav-link p-0 btn text-danger" onclick="deleteData(\'' + getDataTbodyKey[i] + '\',\'' + link + '\')"><i class="fa fa-trash-o" aria-hidden="true"></i></a>' + '</td>' + '</tr>');
+          $("#tbody").append('<tr>' + tdElement + '</tr>');
         }
         startTbody = false;
       }
@@ -437,33 +436,6 @@
       var dataJson = JSON.parse(string);
       var titleCsv = $("#header-dropdown").html();
       exportCSVFile(headerJson, dataJson, titleCsv);
-    });
-
-    var deleted = false, ids = "", links = "";
-    function deleteData(id, link) {
-      ids = id;
-      links = link;
-      $("#modalDelete").modal("show");
-    }
-
-    $("#deleteds").click(function() {
-      deleted = true;
-    });
-
-    setInterval(function() {
-      if (deleted) {
-        $("#modalLoading").modal({modal: "show", backdrop: "static"});
-        firebase.database().ref(links + "/data/" + ids)
-        .set(null, function(error) {
-          if (!error) {
-            $("#" + ids).html("");
-            setTimeout(function() {
-              $("#modalLoading").modal("hide");
-            }, 1500);
-          }
-        });
-        deleted = false;
-      }
     });
   </script>
 </body>
